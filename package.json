@@ -1,47 +1,31 @@
 {
-  "name": "pagetrainsition",
-  "version": "0.1.0",
+  "name": "transition",
+  "version": "1.0.0",
+  "description": "Toot toot",
+  "author": "Jelle van Gogh",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "api": "node server/index.js"
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "axios": "^0.19.0",
-    "body-parser": "^1.19.0",
-    "cache-loader": "^4.1.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "material-design-icons-iconfont": "^5.0.1",
-    "material-icons": "^0.3.1",
-    "nodemailer": "^6.3.0",
-    "vee-validate": "^3.0.1",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "vuebar": "0.0.20",
-    "vuelidate": "^0.7.4"
+    "@nuxtjs/axios": "^5.3.6",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "nuxt": "^2.0.0",
+    "vue-markdown": "^2.2.4",
+    "vuebar": "0.0.20"
   },
   "devDependencies": {
-    "@mdi/font": "^4.0.96",
-    "@vue/cli-service": "^3.10.0",
-    "deepmerge": "^4.0.0",
-    "fibers": "^4.0.1",
-    "less": "^3.0.4",
-    "less-loader": "^4.1.0",
-    "sass": "^1.22.9",
-    "sass-loader": "^7.2.0",
-    "vue-cli-plugin-vuetify": "^0.6.3",
-    "vue-template-compiler": "^2.6.10",
-    "vuetify": "^2.0.5"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "@nuxtjs/vuetify": "^1.0.0",
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.4.1",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.18.9",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^8.0.0"
+  }
 }

@@ -1,40 +1,34 @@
-let express = require('express')
-const app = express();
-var cors = require('cors');
-let nodeMailer = require('nodemailer')
-let port = process.env.PORT || 5000;
-var bodyParser = require("body-parser");
+const express = require('express')
+const consola = require('consola')
+const { Nuxt, Builder } = require('nuxt')
+const app = express()
 
+// Import and Set Nuxt.js options
+const config = require('../nuxt.config.js')
+config.dev = process.env.NODE_ENV !== 'production'
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cors());
-app.listen(port);
-var router = express.Router();
-console.log("Started on port " + port)
-app.post('/mail/send', function (req, res) {
-    console.log(req.body)
-    let transporter = nodeMailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
-        auth: {
-            // should be replaced with real sender's account
-            user: '',
-            pass: ''
-        }
-    });
-    let mailOptions = {
-        // should be replaced with real recipient's account
-        to: '',
-        subject: req.body.subject,
-        text: req.body.message,
-    };
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-    });
-    res.end();
-  });
+async function start () {
+  // Init Nuxt.js
+  const nuxt = new Nuxt(config)
+
+  const { host, port } = nuxt.options.server
+
+  // Build only in dev mode
+  if (config.dev) {
+    const builder = new Builder(nuxt)
+    await builder.build()
+  } else {
+    await nuxt.ready()
+  }
+
+  // Give nuxt middleware to express
+  app.use(nuxt.render)
+
+  // Listen the server
+  app.listen(port, host)
+  consola.ready({
+    message: `Server listening on http://${host}:${port}`,
+    badge: true
+  })
+}
+start()
