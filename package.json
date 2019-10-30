@@ -16,7 +16,8 @@
     "express": "^4.16.4",
     "nuxt": "^2.0.0",
     "vue-markdown": "^2.2.4",
-    "vuebar": "0.0.20"
+    "vuebar": "0.0.20",
+    "vuetify": "^2.1.6"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0",
