@@ -28,7 +28,7 @@ export default {
         },
     ]
     },
-    nacontrole: {
+    geboorteaangifte: {
         img: require(`~/assets/images/fotos/modalgeboorteaangifte.jpg`),
         title: "Geboorteaangifte",
         firstParagraphs: [{
@@ -49,7 +49,7 @@ export default {
         },
     ]
     },
-    nacontrole: {
+    borstvoeding: {
         img: require(`~/assets/images/fotos/modalborstvoeding.jpg`),
         title: "Borstvoeding",
         firstParagraphs: [{
@@ -67,7 +67,7 @@ export default {
         }, 
     ]
     },
-    nacontrole: {
+    kunstvoeding: {
         img: require(`~/assets/images/fotos/modalpoedermelk.jpg`),
         title: "Kunstvoeding",
         firstParagraphs: [{
@@ -82,7 +82,7 @@ export default {
         },
     ]
     },
-    nacontrole: {
+    vruchtbaarheid: {
         img: require(`~/assets/images/fotos/modalvruchtbaarheid.jpg`),
         title: "Vruchtbaarheid",
         firstParagraphs: [{
@@ -96,6 +96,4 @@ export default {
             content: "Tijdens de kraamweek en de nacontrole zullen we je informatie geven over je vruchtbaarheid. Indien gewenst geven we advies over de verschillende anticonceptiemogelijkheden en schrijven we anticonceptie voor. Ook kan je bij ons terecht voor het plaatsen van een (hormoon of koper) spiraal. "
         }]
     }
-]}
-}
 }
