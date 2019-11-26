@@ -44,9 +44,6 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/vuetify'
   ],
-  devModules: [
-    '@nuxtjs/vuetify'
-  ]
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
