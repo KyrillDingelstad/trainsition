@@ -43,9 +43,6 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
   ],
-  devModules: [
-    '@nuxtjs/vuetify'
-  ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -69,8 +66,13 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {
-  },
+ build: {
+    /*
+    ** You can extend webpack config here
+    */
+   extend (config, ctx) {
+  }
+},
   server: {
     host: process.env.HOST || '0.0.0.0'
   }
