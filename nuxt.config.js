@@ -42,7 +42,11 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/vuetify'
   ],
+  devModules: [
+    '@nuxtjs/vuetify'
+  ]
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -69,7 +73,6 @@ module.exports = {
   build: {
   },
   server: {
-    port: 3000,
     host: process.env.HOST || '0.0.0.0'
   }
 }
