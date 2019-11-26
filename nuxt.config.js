@@ -70,5 +70,6 @@ module.exports = {
   },
   server: {
     port: 3000,
+    host: process.env.HOST || '0.0.0.0'
   }
 }
