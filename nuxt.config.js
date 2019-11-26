@@ -1,5 +1,3 @@
-const colors = require('vuetify/es5/util/colors').default
-
 module.exports = {
   mode: 'universal',
   /*
@@ -56,7 +54,6 @@ module.exports = {
   ** https://github.com/nuxt-community/vuetify-module
   */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
       themes: {
@@ -70,11 +67,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-    }
   },
   server: {
     port: 3000,
