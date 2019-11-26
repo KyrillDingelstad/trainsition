@@ -33,15 +33,15 @@ module.exports = {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-    '@nuxtjs/vuetify',
-  ],
   /*
   ** Nuxt.js modules
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
+  ],
+  devModules: [
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Axios module configuration
