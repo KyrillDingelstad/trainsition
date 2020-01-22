@@ -18,7 +18,7 @@ export default {
             content: "Als je weet dat je zwanger bent kun je je rechtstreeks bij ons aanmelden. Wij begeleiden we je tijdens de zwangerschap, bevalling en ook als de baby geboren is komen we regelmatig bij je thuis langs."
         }, {
             title: "",
-            content: "In de zwangerschap houden we de gezondheid van jou en je kind in de gaten en geven we je advies en informatie over jouw zwangerschap. Daarvoor kom je regelmatig bij ons op de praktijk. In het begin is dat elke vier weken maar naarmate de zwangerschap vordert kom je steeds vaker langs. Aan het eind van de zwangerschap zie wel elkaar zelfs elke week."
+            content: "In de zwangerschap houden we de gezondheid van jou en je kind in de gaten en geven we je advies en informatie over jouw zwangerschap. Daarvoor kom je regelmatig bij ons op de praktijk. Het eerste gesprek is een kennismakingsgesprek en plannen we rond de achtste week van je zwangerschap. Daarna kom je elke vier weken op controle. Naarmate de zwangerschap vordert kom je steeds vaker langs. Aan het eind van de zwangerschap zie wel elkaar zelfs elke week."
         }, {
             title: "",
             content: "Als je zwangerschap normaal verloopt kunnen wij jou alle zorg geven die je nodig hebt. Mochten er problemen ontstaan waarvoor specialistische hulp noodzakelijk is dan overleggen we, in samenspraak met jou, met een gynaecoloog of een andere specialist. Indien nodig verwijzen we je door. We hebben een goede samenwerking met meerdere ziekenhuizen in de omgeving. Zo kunnen wij jou de zorg geven die het beste bij jou past."
@@ -29,7 +29,7 @@ export default {
     },
     controles: {
         img: require(`~/assets/images/fotos/modalcontroles.jpg`),
-        title: "Zwangerschapscontroles",
+        title: "Controles",
         firstParagraphs: [{
             title: "", 
             content: "Het eerste gesprek is een kennismakingsgesprek. Dat doen we rond de achtste week van de zwangerschap. Het hartje van je baby is heel klein en nog niet te horen. Je voelt waarschijnlijk wel dat je lichaam verandert."
@@ -97,7 +97,7 @@ export default {
             content: "Gelukkig verloopt het merendeel van de zwangerschappen normaal en worden verreweg de meeste kinderen gezond geboren. Waarschijnlijk krijg je dus een gezond kind. Iedere zwangere vrouw heeft een kleine kans dat haar kind een afwijking heeft. Het kan gaan om een ernstige aandoening of om een afwijking die vanzelf weer verdwijnt of die verholpen kan worden."
         }, {
             title: "",
-            content: "Tijdens de zwangerschap kan je kiezen of je onderzoek wilt doen naar je ongeboren kind om afwijkingen op te sporen. Er zijn twee verschillende onderzoeken in de zwangerschap mogelijk. De screening op chromosoomafwijkingen en de screening naar lichamelijke afwijkingen bij de baby. Indien je dit wenst geven we je meer informatie over deze onderzoeken in een uitgebreid gesprek"
+            content: "Tijdens de zwangerschap kan je kiezen of je onderzoek wilt doen naar je ongeboren kind om afwijkingen op te sporen. Er zijn twee verschillende onderzoeken in de zwangerschap mogelijk. De screening op chromosoomafwijkingen en de screening naar lichamelijke afwijkingen bij de baby. Indien je dit wenst geven we je meer informatie over deze onderzoeken in een uitgebreid gesprek."
         }, {
             title: "",
             content: "Het is een zeer persoonlijke keuze of je wel of niet mee wilt doen aan deze onderzoeken. Wil je tijdens de zwangerschap al weten of je kind afwijkingen heeft? Of wacht je het liever af? In het gesprek zullen we uitleggen wat de onderzoeken precies inhouden, wat er wel en niet gevonden kan worden en je helpen met het maken van jouw keuze om wel of niet te screenen. Je bent nooit verplicht om aan deze onderzoeken deel te nemen."
@@ -196,10 +196,10 @@ export default {
                 header: "Vitamine D", 
                 paragraphs: [{
                     title: "",
-                    content: "Vitamine D is nodig om calcium goed op te nemen uit de voeding. Calcium zorgt voor de opbouw en instandhouding van stevige botten en dat is tijdens de zwangerschap belangrijk voor jou en je baby. Je lichaam maakt zelf vitamine D aan uit daglicht. Ook in voeding zit vitamine D. De gezondheidsraad concludeerde dat zwangere vrouwen geen verhoogde behoefte hebben aan vitamine D."
+                    content: "Vitamine D is nodig om calcium goed op te nemen uit de voeding. Calcium zorgt voor de opbouw en instandhouding van stevige botten en dat is tijdens de zwangerschap belangrijk voor jou en je baby. Je lichaam maakt zelf vitamine D aan uit daglicht. Ook in voeding zit vitamine D."
                 }, {
                     title: "",
-                    content: "Toch adviseert de raad aan zwangere vrouwen om uit voorzorg 10 mg extra vitamine D te nemen. Dit advies klopt als je nauwelijks in de zon komt of onvoldoende vitamine D en calcium via je voeding binnen krijgt. Het is dus van jouw persoonlijke situatie afhankelijk of het verstandig is om extra vitamine D te nemen."
+                    content: "De gezondheidsraad concludeerde dat zwangere vrouwen geen verhoogde behoefte hebben aan vitamine D. Toch adviseert de raad aan zwangere vrouwen om uit voorzorg 10 mg extra vitamine D te nemen. Dit advies klopt als je nauwelijks in de zon komt of onvoldoende vitamine D en calcium via je voeding binnen krijgt. Het is dus van jouw persoonlijke situatie afhankelijk of het verstandig is om extra vitamine D te nemen."
                 }]
             }
         ]},
@@ -219,7 +219,7 @@ export default {
     },
     cursus: {
         img: require(`~/assets/images/fotos/modalcursus.jpg`),
-        title: "Zwangerschapscursus",
+        title: "Cursussen",
         firstParagraphs: [{
             title: "", 
             content: "Tijdens een zwangerschap komt er heel wat op je af. Je voelt hoe je lichaam verandert en je weet niet precies wat er allemaal gaat komen. Zeker als je zwanger bent van je eerste kind is alles nieuw en kan je veel vragen hebben."
@@ -235,13 +235,15 @@ export default {
         img: require(`~/assets/images/fotos/modalvaccinatie.jpg`),
         title: "Kinkhoestvaccinatie",
         firstParagraphs: [{
-            content: "Kinkhoest is een infectieziekte die kinderen en volwassenen kunnen oplopen en kan ernstige hoestbuien veroorzaken. Al sinds 1957 wordt er via het rijksvaccinatieprogramma gevaccineerd tegen kinkhoest. Baby’s krijgen daarvoor bij 2, 3, 4 en 11 maanden een vaccinatie aangeboden."
+            content: "Kinkhoest is een infectieziekte die kinderen en volwassenen kunnen oplopen en kan ernstige hoestbuien veroorzaken. Al sinds 1957 wordt er via het rijksvaccinatieprogramma gevaccineerd tegen kinkhoest. Baby’s kregen daarvoor bij 2, 3, 4 en 11 maanden een vaccinatie aangeboden."
         }, {
-            content: "Je kan ervoor kiezen om je in de zwangerschap te laten vaccineren tegen kinkhoest. Na de vaccinatie gaat jouw lichaam antistoffen aanmaken tegen de bacterie die kinkhoest veroorzaakt. Deze antistoffen gaan door de placenta naar de ongeboren baby toe. Als de baby geboren wordt heeft hij de eerste maanden jouw antistoffen in zijn bloed. Deze antistoffen beschermen de baby direct na de geboorte tegen een kinkhoestinfectie. Uit onderzoek blijkt dat dit een effectieve manier is om je baby de eerste maanden tegen kinkhoest te beschermen. Er komt in 90% van de gevallen minder kinkhoest voor bij baby’s van gevaccineerde moeders. Helaas verdwijnen deze antistoffen langzaam uit het bloed van de baby waardoor hij na een tijdje minder goed beschermd is tegen kinkhoest. Hierom wordt er geadviseerd om na de geboorte de baby ook te vaccineren tegen kinkhoest volgens het rijsvaccinatieprogramma."
+            content: "Sinds kort biedt het rijksvaccinatieprogramma een kinkhoestvaccinatie voor zwangere vrouwen aan. Je kan er nu voor kiezen om je in de zwangerschap te laten vaccineren tegen kinkhoest. Na de vaccinatie gaat jouw lichaam antistoffen aanmaken tegen de bacterie die kinkhoest veroorzaakt. Deze antistoffen gaan door de placenta naar de ongeboren baby toe. Als de baby geboren wordt heeft hij de eerste maanden jouw antistoffen in zijn bloed. Deze antistoffen beschermen de baby direct na de geboorte tegen een kinkhoestinfectie. Uit onderzoek blijkt dat dit een effectieve manier is om je baby de eerste maanden tegen kinkhoest te beschermen. Er komt in 90% van de gevallen minder kinkhoest voor bij baby’s van gevaccineerde moeders. Helaas verdwijnen deze antistoffen langzaam uit het bloed van de baby waardoor hij na een tijdje minder goed beschermd is tegen kinkhoest. Hierom wordt er geadviseerd om na de geboorte de baby ook te vaccineren tegen kinkhoest volgens het rijsvaccinatieprogramma."
         }, {
-            content: "Vanaf eind 2019 krijgen alle zwangere vrouwen in Nederland deze vaccinatie gratis aangeboden op het consultatiebureau. Tot die tijd kan je de vaccinatie zelf halen bij de huisarts of de GGD. Je moet er dan wel zelf voor betalen."
+            content: "Als je hebt gekozen om je in de zwangerschap te laten vaccineren is het niet nodig om je baby bij 2 maanden opnieuw te laten vaccineren tegen kinkhoest. De baby heeft dan nog voldoende antistoffen van jou in zijn bloed. Via het rijksvaccinatieprogramma worden kinderen dan bij 3, 5 en 11 maanden gevaccineerd. Je baby krijgt dus 1 vaccinatie minder toegediend."
         }, {
-            content: "Meer informatie over kinkhoest kan je vinden op de website van het <a href='https://www.rivm.nl/kinkhoest' target='_blank'>RIVM</a>."
+            content: "Vanaf 16 december 2019 krijgen alle zwangere vrouwen in Nederland deze vaccinatie gratis aangeboden op het consultatiebureau. Tot die tijd kan je de vaccinatie zelf halen bij de huisarts of de GGD. Je moet er dan wel zelf voor betalen."
+        }, {
+            content: "Meer informatie over kinkhoest kan je vinden op de website van het <a href='https://www.rivm.nl/kinkhoest' target='_blank'>RIVM</a> of op de website van het <a href='https://rijksvaccinatieprogramma.nl/' target='_blank'>Rijksvaccinatieprogramma</a>."
         }]
     },
     praktisch: {
@@ -260,7 +262,7 @@ export default {
                 }, {
                     content: "Ook jouw partner heeft recht op kraamverlof. Vanaf 2019 hebben partners recht op 5 dagen betaald verlof."
                 }, {
-                    content: "Naast zwangerschapsverlof kun je ook ouderschapsverlof opnemen. Meestal wordt dit verlof niet doorbetaald. Je hebt recht op 26 weken aaneengesloten verlof of je kunt die uren verdelen over een langere periode. Je hoeft het verlof niet direct op te nemen. Je hebt recht op ouderschapsverlof tot je kind 8 jaar is. Meer informatie over ouderschapsverlof kan je vinden op de website van <a href='https://www.rijksoverheid.nl/onderwerpen/ouderschapsverlof' target='_blank'>de rijksoverheid</a>."
+                    content: "Naast zwangerschapsverlof kun je ook ouderschapsverlof opnemen. Meestal wordt dit verlof niet doorbetaald. Je hebt recht op 26 weken aaneengesloten verlof of je kunt de uren verdelen over een langere periode. Je hoeft het verlof niet direct op te nemen. Je hebt recht op ouderschapsverlof tot je kind 8 jaar is. Meer informatie over ouderschapsverlof kan je vinden op de website van <a href='https://www.rijksoverheid.nl/onderwerpen/ouderschapsverlof' target='_blank'>de rijksoverheid</a>."
                 }]
             }, {
                 header: "Kraamzorg", 
@@ -308,7 +310,7 @@ export default {
             content: "-	Zwangerschapsverklaring: Na de termijnecho kan je bij ons een zwangerschapsverklaring krijgen. Deze geef je af bij je werkgever zodat je verlof geregeld kan worden. \n- Erkenning: Indien gewenst kan je erkenning van de ongeboren vrucht regelen bij het stadskantoor. Doe dit voor 24 weken. \n- Zwangerschapscursus: Indien gewenst kan je je inschrijven voor een zwangerschapscursus."
         }, {
             title: "Het derde trimester",
-            content: "-	Informatieavond: Schrijf je in voor de informatieavond bij ons op de praktijk. \n- Geboorteplan: Denk na over jouw wensen voor tijdens de bevalling en schrijf deze op in het geboorteplan. \n- Kraampakket: Vraag je kraampakket aan bij de verzekering. Meestal krijg je deze rond 32 weken opgestuurd. \n- Vluchtkoffer: Vanaf 37 weken is het handig om je vluchtkoffer klaar te hebben staan."
+            content: "-	Informatieavond: Schrijf je in voor de informatieavond bij ons op de praktijk. \n- Geboorteplan: Denk na over jouw wensen voor tijdens de bevalling en schrijf deze op in het geboorteplan. \n- Kraamzorg al langsgeweest? De kraamzorg komt rond 30 weken langs voor een kennismakingsgesprek. \n- Kraampakket al binnen? Vraag je kraampakket aan bij de verzekering. Meestal krijg je deze rond 32 weken opgestuurd. \n- Ziekenhuistas: Vanaf 37 weken is het handig om je ziekenhuistas klaar te hebben staan."
         }]
     },
 

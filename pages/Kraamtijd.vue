@@ -10,21 +10,21 @@
       In de periode na de bevalling zullen wij jullie bijstaan en komen we regelmatig bij je thuis langs. Samen met de kraamverzorgende houden we in de gaten of alles goed verloopt en geven we jullie tips en adviezen over de verzorging van je baby. 
       Mocht je om een medische reden bij de gynaecoloog onder controle zijn geweest en zijn bevallen, dan is het ook gebruikelijk dat we na de bevalling bij je thuis komen kijken. </p>           
      
-   <v-container fluid grid-list-xl class="tileset">
-      <v-layout align-center justify-center row fill-height>
-        <v-flex xs12 md6 lg4 xl4 d-flex v-for="(modal, key) in modals" :key="modal.id">
+    <v-container fluid class="tileset">
+      <v-row justify="center">
+        <v-col  v-for="(modal, key) in modals" :key="modal.id" cols="12" xs="12" sm="12" md="6" lg="4" xl="4">
           <v-card class=tegeltje @click="openModal(key)">
             <img :src="modal.img" />
-            <v-card-title primary class="title"> <vue-markdown> {{modal.title}} </vue-markdown> </v-card-title>
-            </v-card>
-        </v-flex>
-      </v-layout>
+            <v-card-title primary h1> <vue-markdown> {{modal.title}} </vue-markdown> </v-card-title>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
 
     <modal v-show="modal" @close="closeModal" v-if="this.modal">
         <div slot="body">
             <img class=modalimg :src="this.modal.img">
-            <v-card-title primary class="title">{{this.modal.title}}</v-card-title>
+            <v-card-title primary class="modaltitle">{{this.modal.title}}</v-card-title>
             <p v-for="(p, i) in this.modal.firstParagraphs" :key="i" class="fucking-p">
               <span class="fucking-p-title">{{p.title}}</span>
               <vue-markdown> {{p.content}} </vue-markdown>
@@ -75,13 +75,17 @@
 import Page from '@/components/Page.vue'
 import Modal from '@/components/Modal.vue'
 import modals from '@/modals/kraamtijd.js'
+import VueMarkdown from 'vue-markdown'
+import PageFooter from '@/components/Footer.vue'
 
 
 export default {
-  name: 'zwanger',
+  name: 'kraamtijd',
   components: {
     Page,
-    Modal
+    Modal,
+    VueMarkdown,
+    PageFooter
   },
   data () {
     return {
@@ -92,12 +96,12 @@ export default {
   },
   methods: {
     openModal(modal) {
-      this.$router.push({ path: `/bevalling`, query: { modal } })
+      this.$router.push({ path: `/kraamtijd`, query: { modal } })
       this.modal = this.modals[modal]
     },
     closeModal() {
       this.modal = null;
-      this.$router.push('/bevalling');
+      this.$router.push('/kraamtijd');
     }
   },
 };

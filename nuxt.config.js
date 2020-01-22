@@ -58,7 +58,7 @@ module.exports = {
       dark: false,
       themes: {
         light: {
-          primary: "#ff34ff"
+          primary: "#0059a6"
         }
       }
     }
@@ -74,6 +74,7 @@ module.exports = {
   }
 },
   server: {
+    port: process.env.PORT || 45000,
     host: process.env.HOST || '0.0.0.0'
   }
 }

@@ -263,15 +263,6 @@ export default {
 
 <style lang="scss" scoped>
 
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  text-align: center;
-}
-
-
-
 .fotosamen {
   float: right;
   width: 50%;

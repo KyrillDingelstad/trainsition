@@ -1,9 +1,10 @@
 <template>
     <div>
         <v-footer color="rgba(233, 233, 233, 1)" >
-            <v-col>
-            <div class=footer1>
-                <div class="column">
+            <div class="footer1">
+                <v-card color="rgba(233, 233, 233, 1)" flat class="d-flex align-content-center justify-space-around flex-wrap">
+                <v-card color="rgba(233, 233, 233, 1)" flat width="150">
+                <br>
                 <strong>MENU</strong>
                 <ul class="pa-0">
                     <li class=footertekst><router-link class=footertekststyle to="/">Home</router-link></li>
@@ -15,31 +16,33 @@
                     <li class=footertekst><router-link class=footertekststyle to="/nieuws">Nieuws</router-link></li>
                     <li class=footertekst><router-link class=footertekststyle to="/contact">Contact</router-link></li>
                 </ul>
-                </div>
-                <div class="column">
+                </v-card>
+                <v-card color="rgba(233, 233, 233, 1)" flat width="250">
+                <br>
                 <strong>CONTACT</strong><br>
                 TELEFOON<br>
                 06 151 434 16<br><br>
-                E-MAIL<br>
-                info@veiligzwangerambacht.nl<br><br>
+                <strong>E-MAIL</strong><br>
+                info@veiligzwangerambacht.nl<br>
+                </v-card>
+
+                <v-card color="rgba(233, 233, 233, 1)" flat width="200">
+                <br>
+                <strong>LOCATIE</strong><br>
+                DE ZEESTER<br>
+                Tromplaan 49<br>
+                3342TR H.I. Ambacht<br><br>
                 <strong>INFORMATIE</strong>
                 <ul class="pa-0">
                     <li class=footertekst @click="showModalPrivacy">Privacy</li> 
                     <li class=footertekst @click="showModalKlachten">Klachtenregeling</li>
                     </ul>
-                </div>
-                <div class="column">
                 
-                <strong>LOCATIES</strong><br>
-                <span>DE ZEESTER</span><br>
-                Tromplaan 49<br>
-                3342TR H.I. Ambacht<br><br>
-                <span>AVELINGEN</span><br>
-                Avelingen 1<br>
-                3343EA H.I. Ambacht
-                </div>
+                </v-card>
+                </v-card>
+                <br>
+
             </div>
-            </v-col>
         </v-footer>
 
         <v-footer>
@@ -179,5 +182,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- 
+
+
 </style>

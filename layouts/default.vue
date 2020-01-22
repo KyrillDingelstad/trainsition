@@ -2,7 +2,7 @@
   <v-app id="app" class="white">
    
     <img src="~/assets/images/icons/buttonleft2.png" v-if="$route.name != 'home'" class=navleft @click="next">  {{$router.routes}}
-    <img src="~/assets/images/icons/buttonright2.png" v-if="$route.name != 'contact'" class=navright @click="previous"> 
+    <img src="~/assets/images/icons/buttonright2.png" v-if="$route.name != 'contact'" class=navright @click="previous">
     
     <v-app-bar app height="64px" flat color="white" light class="appbar" elevate-on-scroll appbar>
 
@@ -72,9 +72,9 @@ export default {
         }
 
         if (toIndex > fromIndex) {
-          this.transitionName = "slide-left"
+        this.transitionName = "slide-left"
         } else {
-          this.transitionName = "slide-right"
+        this.transitionName = "slide-right"
         }
     }
   },
@@ -254,24 +254,24 @@ body, html {
 .slide-left-leave-active,
 .slide-left-enter-active {
   transition: 1.1s ease-in-out;
-}
+  }
 .slide-left-enter {
   transform: translate(100%, 0);
-}
+  }
 .slide-left-leave-to {
   transform: translate(-100%, 0);
-}
+  }
 
 .slide-right-leave-active,
 .slide-right-enter-active {
   transition: 1.1s ease-in-out;
-}
+  }
 .slide-right-enter {
   transform: translate(-100%, 0);
-}
+  }
 .slide-right-leave-to {
   transform: translate(100%, 0);
-}
+  }
 
 /* Vuebar */
 

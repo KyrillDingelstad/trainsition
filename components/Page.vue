@@ -10,6 +10,13 @@
 <script>
 export default {
   name: 'page',
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Chakra+Petch|Dancing+Script|Indie+Flower|Quicksand&display=swap,' }
+      ]
+    }
+  }
 }
 </script>
 
@@ -30,5 +37,7 @@ export default {
     top: 64px;
     background-color: white;
     }
+
+
 
 </style>

@@ -8,31 +8,28 @@
      </div>
 
     <p class=standaardp>
-      Of het nu je eerste keer is of je bent al een aantal keer zwanger geweest, het blijft een bijzondere ervaring om zwanger te zijn. In deze periode zal er een hele hoop op je af komen, zowel fysiek als emotioneel. 
-      Iedere zwangerschap is uniek en elke vrouw zal haar zwangerschap op een andere manier ervaren. Elke moeder heeft zo haar eigen verhaal. </p>
+      Of het nu je eerste keer is of je bent al een aantal keer zwanger geweest, het blijft een bijzondere ervaring om zwanger te zijn. In deze periode zal je merken dat je lichaam verandert, zowel fysiek als emotioneel. Wij als verloskundigen begeleiden we je tijdens de zwangerschap, de bevalling en als de baby geboren is komen we regelmatig bij je thuis langs. In de zwangerschap houden we de gezondheid van jou en je kind in de gaten en geven advies en informatie over jouw zwangerschap. </p>
     <p class=standaardp>
-      Tijdens je zwangerschap zal je waarschijnlijk een hoop vragen hebben over wat er allemaal gaat gebeuren. Graag helpen we je hierin. 
-      Voor ons is het belangrijk om voor jou tijd vrij te maken om je zo goed mogelijk te kunnen begeleiden in jouw verhaal. </p>
+      Als je weet dat je zwanger bent kun je je rechtstreeks bij ons aanmelden, dat kan via de telefoon of via de mail. Hiervoor heb je geen verwijzing van de huisarts nodig. </p>
     <p class=standaardp>
-      Je zult tijdens je zwangerschap regelmatig bij ons langskomen op het spreekuur en houden we jouw voortgang samen goed in de gaten. 
-      We helpen je met het doorlopen van verschillende onderzoeken, we maken echo’s, we houden de gezondheid van jou en de baby goed in de gaten en we helpen je voorbereiden richting de bevalling. </p>
+        </p>
 
 
-    <v-container fluid grid-list-xl class="tileset">
-      <v-layout align-center justify-center row fill-height>
-        <v-flex xs12 md6 lg4 xl4 d-flex v-for="(modal, key) in modals" :key="modal.id">
+    <v-container fluid class="tileset">
+      <v-row justify="center">
+        <v-col  v-for="(modal, key) in modals" :key="modal.id" cols="12" xs="12" sm="12" md="6" lg="4" xl="4">
           <v-card class=tegeltje @click="openModal(key)">
             <img :src="modal.img" />
-            <v-card-title primary class="title"> <vue-markdown> {{modal.title}} </vue-markdown> </v-card-title>
-            </v-card>
-        </v-flex>
-      </v-layout>
+            <v-card-title primary h1> <vue-markdown> {{modal.title}} </vue-markdown> </v-card-title>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
 
     <modal v-show="modal" @close="closeModal" v-if="this.modal">
         <div slot="body">
             <img class=modalimg :src="this.modal.img">
-            <v-card-title primary class="title">{{this.modal.title}}</v-card-title>
+            <v-card-title primary class="modaltitle">{{this.modal.title}}</v-card-title>
             <p v-for="(p, i) in this.modal.firstParagraphs" :key="i" class="fucking-p">
               <span class="fucking-p-title">{{p.title}}</span>
               <vue-markdown> {{p.content}} </vue-markdown>
