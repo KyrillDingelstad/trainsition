@@ -9,15 +9,8 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="navknopklein"></v-app-bar-nav-icon>
         <router-link to="/"><img class=appbarlogo src="~/assets/images/icons/logo.png"></router-link>
       <div id="nav" align-items="left">
-        
-        <router-link tag="a" :class="{active: $route.name == 'home'}" class="navbuttons" to="/">Home</router-link>
-        <router-link tag="a" :class="{active: $route.name == 'praktijk'}" class="navbuttons" to="/praktijk">Praktijk</router-link>
-        <router-link tag="a" :class="{active: $route.name == 'zwanger'}" class="navbuttons" to="/zwanger">Zwanger</router-link>
-        <router-link tag="a" :class="{active: $route.name == 'bevalling'}" class="navbuttons" to="/bevalling">Bevalling</router-link>
-        <router-link tag="a" :class="{active: $route.name == 'kraamtijd'}" class="navbuttons" to="/kraamtijd">Kraamtijd</router-link>
-        <router-link tag="a" :class="{active: $route.name == 'anticonceptie'}" class="navbuttons" to="/anticonceptie">Anticonceptie</router-link>
-        <router-link tag="a" :class="{active: $route.name == 'nieuws'}" class="navbuttons" to="/nieuws">Nieuws</router-link>
-        <router-link tag="a" :class="{active: $route.name == 'contact'}" class="navbuttons" to="/contact">Contact</router-link> 
+         
+        <router-link v-for="route in routes" class="navbuttons" :class="{active: $route.name == route.name}" tag="a" :to="'/' + route.name">{{route.name}}</router-link>
       </div>
     </v-app-bar>
 
@@ -25,14 +18,7 @@
 
      <v-navigation-drawer v-model="drawer" fixed temporary>
       <ul class="pa-0">
-        <li class="navlistbuttons" :class="{active: $route.name == 'home'}"><router-link tag="a" to="/">Home</router-link></li>
-        <li class="navlistbuttons" :class="{active: $route.name == 'praktijk'}"><router-link tag="a" to="/praktijk">Praktijk</router-link></li>
-        <li class="navlistbuttons" :class="{active: $route.name == 'zwanger'}"><router-link tag="a" to="/zwanger">Zwanger</router-link></li>
-        <li class="navlistbuttons" :class="{active: $route.name == 'bevalling'}"><router-link tag="a" to="/bevalling">Bevalling</router-link></li>
-        <li class="navlistbuttons" :class="{active: $route.name == 'kraamtijd'}"><router-link tag="a" to="/kraamtijd">Kraamtijd</router-link></li>
-        <li class="navlistbuttons" :class="{active: $route.name == 'anticonceptie'}"><router-link tag="a" to="/anticonceptie">Anticonceptie</router-link></li>
-        <li class="navlistbuttons" :class="{active: $route.name == 'nieuws'}"><router-link tag="a" to="/nieuws">Nieuws</router-link></li>
-        <li class="navlistbuttons" :class="{active: $route.name == 'contact'}"><router-link tag="a" to="/contact">Contact</router-link></li>
+        <li v-for="route in routes"  class="navlistbuttons" :class="{active: $route.name == route.name}"> <router-link tag="a" :to="'/' + route.name">{{route.name}}</router-link></li>
       </ul>
      
     </v-navigation-drawer>
@@ -50,69 +36,92 @@ export default {
   data () {
     return {
       transitionName: "slide-left",
-      routes: [],
+      routes: [
+        {
+          name: 'Home'
+        },
+        {
+          name: 'Praktijk'
+        },
+        {
+          name: 'Zwanger'
+        },
+        {
+          name: 'Bevalling'
+        },
+        {
+          name: 'Kraamtijd'
+        },
+        {
+          name: 'Anticonceptie'
+        },
+        {
+          name: 'Nieuws'
+        },
+        {
+          name: 'Contact'
+        },
+        
+      ],
       currentRouteId: 0,
       drawer: false,
     }
   },
   watch: {
     $route(to, from) {
-        let toIndex;
-        let fromIndex;
+      let toIndex;
+      let fromIndex;
 
-        for (let i = 0; i <  this.$router.options.routes.length; i++) {
-          let route =  this.$router.options.routes[i];
-          if (route.name === from.name) {
-            fromIndex = i;
-          }
-
-          if (route.name === to.name) {
-            toIndex = i
-          }
+      for (let i = 0; i <  this.routes.length; i++) {
+        let route =  this.routes[i];
+        if (route.name === from.name) {
+          fromIndex = i;
         }
 
-        if (toIndex > fromIndex) {
+        if (route.name === to.name) {
+          toIndex = i
+        }
+      }
+
+      if (toIndex > fromIndex) {
         this.transitionName = "slide-left"
-        } else {
+      } else {
         this.transitionName = "slide-right"
-        }
+      }
     }
   },
   mounted () {
-    this.routes = this.$router.options.routes
-
     // Init currentRouteId from URL
-    this.refreshCurrentRouteId(this.$router.currentRoute.fullPath)
+    console.log(this.$route.name)
+    this.refreshCurrentRouteId(this.$route.name)
 
     // Handle manual page change
-    this.$router.afterEach((to, from) => { this.refreshCurrentRouteId(to.path) })
+    this.$router.afterEach((to, from) => { this.refreshCurrentRouteId(to.name) })
   },
   methods: {
-    refreshCurrentRouteId (currentPath) {
-      this.currentRouteId = this.routes.findIndex(route => route.path === currentPath)
+    refreshCurrentRouteId (currentRoute) {
+      this.currentRouteId = this.routes.findIndex(route => route.name === currentRoute)
+      console.log(this.currentRouteId)
     },
     previous () {
-      console.log('Going to previous page')
-
       this.currentRouteId++
       if (this.routes.length === this.currentRouteId) {
         // Go back to first route
         this.currentRouteId = 0
       }
 
-      this.$router.push(this.routes[this.currentRouteId])
+      console.log(this.routes[this.currentRouteId])
+
+      this.$router.push(this.routes[this.currentRouteId].name)
     },
     next () {
-      console.log('Going to next page')
-        console.log(this.$route.name)
-
       this.currentRouteId--
       if (this.currentRouteId === -1) {
         // Go to last route
         this.currentRouteId += this.routes.length
       }
 
-      this.$router.push(this.routes[this.currentRouteId])
+      this.$router.push(this.routes[this.currentRouteId].name)
     }
   }
 }
