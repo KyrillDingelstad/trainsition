@@ -1,8 +1,8 @@
 <template>
   <v-app id="app" class="white">
    
-    <img src="~/assets/images/icons/buttonleft2.png" v-if="$route.name != 'home'" class=navleft @click="next">  {{$router.routes}}
-    <img src="~/assets/images/icons/buttonright2.png" v-if="$route.name != 'contact'" class=navright @click="previous">
+    <img src="~/assets/images/icons/buttonleft2.png" class=navleft @click="next" />
+    <img src="~/assets/images/icons/buttonright2.png" class=navright @click="previous"/>
     
     <v-app-bar app height="64px" flat color="white" light class="appbar" elevate-on-scroll appbar>
 
@@ -10,7 +10,7 @@
         <router-link to="/"><img class=appbarlogo src="~/assets/images/icons/logo.png"></router-link>
       <div id="nav" align-items="left">
          
-        <router-link v-for="route in routes" class="navbuttons" :class="{active: $route.name == route.name}" tag="a" :to="'/' + route.name">{{route.name}}</router-link>
+        <router-link v-for="route in routes" class="navbuttons" :class="{active: $route.path == route.path}" tag="a" :to="route.path">{{route.name}}</router-link>
       </div>
     </v-app-bar>
 
@@ -18,7 +18,7 @@
 
      <v-navigation-drawer v-model="drawer" fixed temporary>
       <ul class="pa-0">
-        <li v-for="route in routes"  class="navlistbuttons" :class="{active: $route.name == route.name}"> <router-link tag="a" :to="'/' + route.name">{{route.name}}</router-link></li>
+        <li v-for="route in routes"  class="navlistbuttons" :class="{active: $route.path == route.path}"> <router-link tag="a" :to="route.path">{{route.name}}</router-link></li>
       </ul>
      
     </v-navigation-drawer>
@@ -38,28 +38,36 @@ export default {
       transitionName: "slide-left",
       routes: [
         {
-          name: 'Home'
+          name: 'Home',
+          path: '/'
         },
         {
-          name: 'Praktijk'
+          name: 'Praktijk',
+          path: '/praktijk'
         },
         {
-          name: 'Zwanger'
+          name: 'Zwanger',
+          path: '/zwanger'
         },
         {
-          name: 'Bevalling'
+          name: 'Bevalling',
+          path: '/bevalling'
         },
         {
-          name: 'Kraamtijd'
+          name: 'Kraamtijd',
+          path: '/kraamtijd'
         },
         {
-          name: 'Anticonceptie'
+          name: 'Anticonceptie',
+          path: '/anticonceptie'
         },
         {
-          name: 'Nieuws'
+          name: 'Nieuws',
+          path: '/nieuws'
         },
         {
-          name: 'Contact'
+          name: 'Contact',
+          path: '/contact'
         },
         
       ],
@@ -74,11 +82,11 @@ export default {
 
       for (let i = 0; i <  this.routes.length; i++) {
         let route =  this.routes[i];
-        if (route.name === from.name) {
+        if (route.path === from.path) {
           fromIndex = i;
         }
 
-        if (route.name === to.name) {
+        if (route.path === to.path) {
           toIndex = i
         }
       }
@@ -92,16 +100,14 @@ export default {
   },
   mounted () {
     // Init currentRouteId from URL
-    console.log(this.$route.name)
-    this.refreshCurrentRouteId(this.$route.name)
+    this.refreshCurrentRouteId()
 
     // Handle manual page change
     this.$router.afterEach((to, from) => { this.refreshCurrentRouteId(to.name) })
   },
   methods: {
-    refreshCurrentRouteId (currentRoute) {
-      this.currentRouteId = this.routes.findIndex(route => route.name === currentRoute)
-      console.log(this.currentRouteId)
+    refreshCurrentRouteId () {
+      this.currentRouteId = this.routes.findIndex(route => route.path === this.$route.path)
     },
     previous () {
       this.currentRouteId++
@@ -110,9 +116,7 @@ export default {
         this.currentRouteId = 0
       }
 
-      console.log(this.routes[this.currentRouteId])
-
-      this.$router.push(this.routes[this.currentRouteId].name)
+      this.$router.push(this.routes[this.currentRouteId].path)
     },
     next () {
       this.currentRouteId--
@@ -121,12 +125,10 @@ export default {
         this.currentRouteId += this.routes.length
       }
 
-      this.$router.push(this.routes[this.currentRouteId].name)
+      this.$router.push(this.routes[this.currentRouteId].path)
     }
   }
 }
-
-
 
 </script>
 
