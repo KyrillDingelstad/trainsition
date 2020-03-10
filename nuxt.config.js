@@ -27,6 +27,9 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
+  serverMiddleware: [
+    '~/api/contact'
+  ],
   plugins: [
     '~/plugins/vue-bar'
   ],
@@ -74,7 +77,7 @@ module.exports = {
   }
 },
   server: {
-    port: process.env.PORT || 45000,
-    host: process.env.HOST || '0.0.0.0'
+    port: process.env.PORT || 5000,
+    host: process.env.HOST || 'localhost'
   }
 }

@@ -1,8 +1,29 @@
 <template>
   <page class="contact">
-       <img src="~/assets/images/fotos/contacttop.jpg" class="pagestarter contacttop">   
+    <v-dialog
+      v-model="dialog"
+      width="500"
+    >
+      <v-card>
+        <v-card-text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </v-card-text>
 
-    
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="dialog = false"
+          >
+            OK
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    <img src="~/assets/images/fotos/contacttop.jpg" class="pagestarter contacttop">   
     <div class=pagetitle>
     <h1>CONTACT</h1>
 
@@ -18,7 +39,6 @@
       <v-form
           ref="form"
           v-model="valid"
-          lazy-validation
         >
           <v-text-field
             v-model="name"
@@ -37,16 +57,16 @@
           ></v-text-field>
 
           <v-text-field
-            v-model="telefoonnummer"
+            v-model="phone"
             :counter="10"
-            :rules="telefoonnummerRules"
+            :rules="phoneRules"
             label="Telefoon nummer"
             color="#0059a6"
             required
           ></v-text-field>
     
           <v-select
-            v-model="select"
+            v-model="subject"
             :items="items"
             :rules="[v => !!v || 'Kies een onderwerp']"
             label="Onderwerp"
@@ -55,7 +75,7 @@
           ></v-select>
 
           <v-textarea
-                v-model="bericht"
+                v-model="message"
                 color="#0059a6" 
                 auto-grow
                 :rules="[v => !!v || 'Leeg bericht']"
@@ -84,14 +104,6 @@
           >
             Verstuur
           </v-btn>
-    
-          <v-btn
-            class="mr-4"
-            @click="reset"
-          >
-            Reset
-          </v-btn>
-    
         </v-form>
       </div>
 
@@ -126,8 +138,7 @@ import Page from '@/components/Page.vue'
 import Modal from '@/components/Modal.vue'
 import VueMarkdown from 'vue-markdown'
 import PageFooter from '@/components/Footer.vue'
-//import { sendMail } from '@/api/api.js'
-//import { sendMail } from '@/api/mail.js'
+import axios from 'Axios'
 
 
 export default {
@@ -140,21 +151,20 @@ export default {
       emailRules: [
         (v) => !!v || 'Email is nodig', 
         (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail is ongeldig',
-        ],
+      ],
       valid: false,
-      telefoonnummer: null,
-      telefoonnummerRules: [
+      phone: null,
+      phoneRules: [
         (v) => v && v.length == 10 || 'Gebruik een 10 cijferig nummer',
-        ],
-      bericht: null,
+      ],
+      message: null,
       name: '',
       nameRules: [
-      v => !!v || 'Voer een volledige naam in',
-      v => v.length >= 4 || 'Naam te kort',
+        v => !!v || 'Voer een volledige naam in',
+        v => v && v.length >= 4 || 'Naam te kort',
       ],
       checkbox: false,
-      select: null,
-      phone: null,
+      subject: null,
       area: null,
       nameError: null,
       emailError: null,
@@ -163,7 +173,8 @@ export default {
       phoneError: null,
       items: [
         "Aanmelding", "Vraag", "Zakelijk", "Overig"
-      ]
+      ],
+      dialog: false
     }
   },
   components: {
@@ -171,7 +182,7 @@ export default {
     Modal,
     VueMarkdown,
     PageFooter
-  },
+  },    
   methods: {
     showModalPrivacy() {this.isModalPrivacyVisible = true;},
     showModalKlachten() {this.isModalKlachtenVisible = true;},
@@ -180,13 +191,22 @@ export default {
     closeModalKlachten() {this.isModalKlachtenVisible = false;},
 
     validate () {
-      if (this.$refs.form.validate()) {
+     if (this.$refs.form.validate()) {
         this.snackbar = true
+        let data   = {
+          email: this.email,
+          phone: this.phone,
+          message: this.message,
+          name: this.name,
+          subject: this.subject
+        }
+        
+        this.$axios.post('api/contact', {data: data}).then(() => {
+          this.$refs.form.reset()
+          this.dialog = true
+        })
       }
-    },
-    reset () {
-      this.$refs.form.reset()
-    },
+    }
   },
 };
 
@@ -200,10 +220,10 @@ export default {
   }
 
   .adresbalk {
-  width: 100%;
-  background-color: rgb(235, 242, 248);
-  display: inline-block;
-  margin-top: 60px;
+    width: 100%;
+    background-color: rgb(235, 242, 248);
+    display: inline-block;
+    margin-top: 60px;
   }
 
   .adrestext{

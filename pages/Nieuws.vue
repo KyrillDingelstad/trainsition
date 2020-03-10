@@ -32,9 +32,6 @@
     </div>
     
     <page-footer />
-
-
-
   </page>
 </template>
 

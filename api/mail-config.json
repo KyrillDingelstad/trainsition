@@ -1,0 +1,8 @@
+{
+    "host": "HOST_NAME",
+    "user": "USER_NAME",
+    "noreply": "NOREPLY_EMAIL",
+    "info": "INFO_EMAIL",
+    "password": "PASSWORD",
+    "port": "PORT:NUMBER"
+}
