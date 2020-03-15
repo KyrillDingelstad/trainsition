@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+    <head>
+        <meta charset = "UTF-8">
+        <style type="text/css">
+            p {
+                color: black;
+            }
+
+            .logo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .info span {
+                font-size: 14px;
+                padding: 10px 0;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        
+        <p>Van: <strong>{{name}}</strong></p>
+        <br>
+        <p >Soort bericht - <strong>{{subject}}</strong></p>
+        <p><strong>Contactgegevens</strong><br>
+        Naam: <strong>{{Naam}}</strong><br>
+        Email: <strong>{{from}}</strong><br>
+        Mobiel: <strong>{{phone}}</strong><br><br>
+        </p>
+        <p><strong>Bericht</strong><br>{{message}}
+        </p>  
+    </body>
+</html>

@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang = "en-US">
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Chakra+Petch|Dancing+Script|Indie+Flower|Quicksand&display=swap" rel="stylesheet" type="text/css">
+        <img src="mailheader.jpg" class="header">
         <meta charset = "UTF-8">
         <style type="text/css">
             p {
-                color: #26b72b;
+                color: black;
+                text-align: center;
+                font-family: 'Quicksand', sans-serif;
             }
-            header {
-                height: 48px;
+
+            .header {
                 width: 100%;
-                background: green;
+                height: 10vh;
+                object-fit: cover;
+                margin-bottom: 3%;
+                }
+            
+            .fotosandra {
+                margin-top: 5%;
+                width: 16%;
+                margin-left: 42%;
+                margin-right: auto;
             }
 
             .logo {
                 width: 150px;
                 height: 150px;
+            }
+
+            .bericht{
+                background-color: rgb(245, 245, 245);
+                width: 60%;
+                min-width: 300px;
+                max-width: 800px;
+                left: 20%;
+                margin: auto;
+            }
+
+            .berichttekst{
+                left: 40px;
+                width: 90%;
             }
 
             table {
@@ -28,19 +55,34 @@
             }
 
         </style>
+
     </head>
 
     <body>
         <header></header>
-        <h1>My First Heading {{fname}}</h1>
-        <p>My first paragraph.</p>
-        <table cellspacing="0" cellpadding="0" border="0">
-            <tr>
-                <td width="150"><img class="logo" src="cid:imagename" /></td>
-            </tr>
-            <tr>
-                <td width="150">Sandra Suylen</td>
-            </tr>
-        </table>
+        <p style="font-size:xx-large;">Hallo {{name}}</p>
+        <p style="font-size:larger;"><strong>Bedankt voor je bericht!</strong> </p>
+        <p>We zullen zo snel mogelijk contact met je opnemen.</p>
+        <p>Wil je ons graag direct contacteren, dan zijn wij 24 uur per dag telefonisch bereikbaar via <strong>06-15143416</strong>.</p>
+        <img src="Sandra.png" class="fotosandra">
+        <div style="text-align: center; font-size:xx-large; font-family: 'Dancing Script', cursive">Sandra Suylen</div>
+        <p>Verloskundigenpraktijk Veilig Zwanger Ambacht</p>
+
+        <p style="margin-top: 10%;">Dit bericht hebben we van jou ontvangen</p>
+        <div class=bericht>
+            <br>
+            <p >Soort bericht - <strong>{{subject}}</strong></p>
+            <p><strong>Contactgegevens</strong><br>
+            Naam: {{Naam}}<br>
+            Email: {{from}}<br>
+            Mobiel: {{phone}}<br><br>
+            </p>
+            <p style="margin-left: 24px; margin-right: 24px; margin-bottom: 24px;"><strong>Bericht</strong><br>{{message}}
+            </p>   
+            <br>         
+
+            
+        </div>
+
     </body>
 </html>

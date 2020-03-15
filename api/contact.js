@@ -36,7 +36,10 @@ const sendMail = function (name, from, phone, subject, message) {
     auth: {
       user: mailConfig.user,
       pass: mailConfig.password
-    }
+    },
+    tls: {
+      rejectUnauthorized: false
+  }
   });
 
   //set up mail templates
@@ -61,7 +64,7 @@ const sendMail = function (name, from, phone, subject, message) {
     }
   }
 
-  //set up form mail
+  //set up confirm mail
   let confirmMail = {
     from: 'veiligzwangerambacht ' + mailConfig.info,
     to: from,
@@ -73,8 +76,8 @@ const sendMail = function (name, from, phone, subject, message) {
       message: message
     },
     attachments: [{
-      filename: 'AC.jpg',
-        path: __dirname + '/templates/AC.jpg',
+      filename: 'mailheader.jpg; Sandra.png', 
+        path: __dirname + '/templates/mailheader.jpg; /templats/Sandra.png',
         cid: 'imagename'
     }],
   }
