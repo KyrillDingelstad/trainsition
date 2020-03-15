@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/recaptcha": "^0.6.2",
     "body-parser": "^1.19.0",
     "email-templates": "^7.0.4",
     "express": "^4.16.4",

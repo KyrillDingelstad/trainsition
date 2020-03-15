@@ -95,6 +95,11 @@
             color="#0059a6"
             required
           ></v-checkbox>
+
+            <v-checkbox
+              label="test captcha?"
+              @click="test"
+            ></v-checkbox>
     
           <v-btn
             :disabled="!valid"
@@ -138,7 +143,6 @@ import Page from '@/components/Page.vue'
 import Modal from '@/components/Modal.vue'
 import VueMarkdown from 'vue-markdown'
 import PageFooter from '@/components/Footer.vue'
-import axios from 'Axios'
 
 
 export default {
@@ -182,7 +186,10 @@ export default {
     Modal,
     VueMarkdown,
     PageFooter
-  },    
+  },     
+  async mounted() {
+    await this.$recaptcha.init()
+  },
   methods: {
     showModalPrivacy() {this.isModalPrivacyVisible = true;},
     showModalKlachten() {this.isModalKlachtenVisible = true;},
@@ -190,21 +197,32 @@ export default {
     closeModalPrivacy() {this.isModalPrivacyVisible = false;},
     closeModalKlachten() {this.isModalKlachtenVisible = false;},
 
-    validate () {
+    async test() {
+    
+    },
+
+    async validate () {
      if (this.$refs.form.validate()) {
-        this.snackbar = true
-        let data   = {
-          email: this.email,
-          phone: this.phone,
-          message: this.message,
-          name: this.name,
-          subject: this.subject
+        try {
+          const token = await this.$recaptcha.execute()
+          console.log('ReCaptcha token:', token)
+          let data   = {
+            email: this.email,
+            phone: this.phone,
+            message: this.message,
+            name: this.name,
+            subject: this.subject,
+            token: token
+          }
+
+          this.$axios.post('api/contact', {data}).then(() => {
+            this.snackbar = true
+           this.$refs.form.reset()
+          })
+          
+        } catch (error) {
+          console.log('Login error:', error)
         }
-        
-        this.$axios.post('api/contact', {data: data}).then(() => {
-          this.$refs.form.reset()
-          this.dialog = true
-        })
       }
     }
   },

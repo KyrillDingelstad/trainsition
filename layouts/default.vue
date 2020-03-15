@@ -18,7 +18,7 @@
 
      <v-navigation-drawer v-model="drawer" fixed temporary>
       <ul class="pa-0">
-        <li v-for="route in routes"  class="navlistbuttons" :class="{active: $route.path == route.path}"> <router-link tag="a" :to="route.path">{{route.name}}</router-link></li>
+        <li v-for="route in routes"  class="navlistbuttons" :class="{active: $route.path == route.path}"> <router-link tag="a" :to="route.path" :key="route.name">{{route.name}}</router-link></li>
       </ul>
      
     </v-navigation-drawer>

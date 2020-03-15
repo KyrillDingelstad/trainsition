@@ -41,8 +41,14 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/recaptcha'
   ],
+  recaptcha: {
+    hideBadge: true, // Hide badge element (v3 & v2 via size=invisible)
+    siteKey: '',    // Site key for requests
+    version: 3,     // Version
+  },
   buildModules: [
     '@nuxtjs/vuetify'
   ],

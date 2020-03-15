@@ -1,5 +1,6 @@
 import express from 'express'
 import nodemailer from 'nodemailer'
+import axios from 'axios'
 
 let hbs = require('nodemailer-express-handlebars')
 let mailConfig = require('./mail-config.json')
@@ -8,10 +9,22 @@ const app = express()
 
 app.use(express.json())
 app.post('/contact', (req, res) => {
-    // Validate, sanitize and send
+    // Validate, sanitize and send 
+    let response = req.body.data.token
+    let secret = ''
+    axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${response}`).then((result) => {
+      console.log('it went right', result.success)
+      if (result.success) { 
+        sendMail(req.body.data.name, req.body.data.email, req.body.data.phone, req.body.data.subject, req.body.data.message)
+        res.status(200).json({ 'message': 'OH YEAH' })
+      }
+    })
     sendMail(req.body.data.name, req.body.data.email, req.body.data.phone, req.body.data.subject, req.body.data.message)
     res.status(200).json({ 'message': 'OH YEAH' })
-      
+})                                                           
+
+app.post('/verify', (req, res) => { 
+ 
 })
 
 const sendMail = function (name, from, phone, subject, message) {
