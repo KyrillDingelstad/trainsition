@@ -2,7 +2,6 @@
 <html lang = "en-US">
     <head>
         <link href="https://fonts.googleapis.com/css?family=Chakra+Petch|Dancing+Script|Indie+Flower|Quicksand&display=swap" rel="stylesheet" type="text/css">
-        <img src="mailheader.jpg" class="header">
         <meta charset = "UTF-8">
         <style type="text/css">
             p {
@@ -59,15 +58,16 @@
     </head>
 
     <body>
-        <header></header>
+        <header>
+            <img src="cid:mailheader" class="header">
+        </header>
         <p style="font-size:xx-large;">Hallo {{name}}</p>
         <p style="font-size:larger;"><strong>Bedankt voor je bericht!</strong> </p>
         <p>We zullen zo snel mogelijk contact met je opnemen.</p>
         <p>Wil je ons graag direct contacteren, dan zijn wij 24 uur per dag telefonisch bereikbaar via <strong>06-15143416</strong>.</p>
-        <img src="Sandra.png" class="fotosandra">
+        <img src="cid:sandra" class="fotosandra">
         <div style="text-align: center; font-size:xx-large; font-family: 'Dancing Script', cursive">Sandra Suylen</div>
         <p>Verloskundigenpraktijk Veilig Zwanger Ambacht</p>
-
         <p style="margin-top: 10%;">Dit bericht hebben we van jou ontvangen</p>
         <div class=bericht>
             <br>
@@ -80,9 +80,6 @@
             <p style="margin-left: 24px; margin-right: 24px; margin-bottom: 24px;"><strong>Bericht</strong><br>{{message}}
             </p>   
             <br>         
-
-            
         </div>
-
     </body>
 </html>

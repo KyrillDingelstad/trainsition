@@ -27,8 +27,6 @@
     <div class=pagetitle>
     <h1>CONTACT</h1>
 
-
-
     </div>
 
     <p class=standaardp>Heb je vragen over zwangerschap en geboorte of wil je je aanmelden bij onze praktijk, dan kan je ons bellen of een mail sturen.</p>
@@ -96,11 +94,6 @@
             required
           ></v-checkbox>
 
-            <v-checkbox
-              label="test captcha?"
-              @click="test"
-            ></v-checkbox>
-    
           <v-btn
             :disabled="!valid"
             color="primary"
@@ -109,6 +102,9 @@
           >
             Verstuur
           </v-btn>
+          <span v-if="captchaError" style="color: red">
+            Er is iets mis gegaan. Probeer het alstublieft nogmaals.
+          </span>
         </v-form>
       </div>
 
@@ -175,6 +171,7 @@ export default {
       checkboxError: null,
       selectError: null,
       phoneError: null,
+      captchaError: false,
       items: [
         "Aanmelding", "Vraag", "Zakelijk", "Overig"
       ],
@@ -197,15 +194,11 @@ export default {
     closeModalPrivacy() {this.isModalPrivacyVisible = false;},
     closeModalKlachten() {this.isModalKlachtenVisible = false;},
 
-    async test() {
-    
-    },
-
     async validate () {
      if (this.$refs.form.validate()) {
         try {
           const token = await this.$recaptcha.execute()
-          console.log('ReCaptcha token:', token)
+
           let data   = {
             email: this.email,
             phone: this.phone,
@@ -215,13 +208,17 @@ export default {
             token: token
           }
 
-          this.$axios.post('api/contact', {data}).then(() => {
-            this.snackbar = true
-           this.$refs.form.reset()
+          this.$axios.post('api/contact', {data}).then((res) => {
+            this.dialog = true
+            this.captchaError = false
+            this.$refs.form.reset()
+          }).catch((err) => {
+            console.log(`something went wrong`)
+            this.captchaError = true
           })
           
         } catch (error) {
-          console.log('Login error:', error)
+          this.captchaError = true
         }
       }
     }
