@@ -29,7 +29,7 @@ export default {
     },
     controles: {
         img: require(`~/assets/images/fotos/modalcontroles.jpg`),
-        title: "Zwangerschapscontroles",
+        title: "Controles",
         firstParagraphs: [{
             title: "", 
             content: "Het eerste gesprek is een kennismakingsgesprek. Dat doen we rond de achtste week van de zwangerschap. Het hartje van je baby is heel klein en nog niet te horen. Je voelt waarschijnlijk wel dat je lichaam verandert."
@@ -219,7 +219,7 @@ export default {
     },
     cursus: {
         img: require(`~/assets/images/fotos/modalcursus.jpg`),
-        title: "Zwangerschapscursus",
+        title: "Cursus",
         firstParagraphs: [{
             title: "", 
             content: "Tijdens een zwangerschap komt er heel wat op je af. Je voelt hoe je lichaam verandert en je weet niet precies wat er allemaal gaat komen. Zeker als je zwanger bent van je eerste kind is alles nieuw en kan je veel vragen hebben."
