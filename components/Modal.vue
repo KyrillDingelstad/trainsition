@@ -100,7 +100,10 @@
 
   .modalimg {
     width: 100%;
+    max-height: 45vh;
     margin-bottom: 40px;
+    object-fit:cover;
+
     
   }
 
