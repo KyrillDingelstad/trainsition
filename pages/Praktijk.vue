@@ -23,7 +23,7 @@
     
     <v-container fluid grid-list-xl class="tilesetp">
       <v-layout align-content-start align-start justify-center row fill-height>
-        <v-flex xs12 md12 lg6 xl6 d-flex>
+        <v-flex xs12 md12 lg12 xl12 d-flex>
           <v-card>
             <img src=~/assets/images/fotosandra.jpg />
             <v-card-title primary class="title">Sandra Suylen</v-card-title>
@@ -43,7 +43,7 @@
               <p class="fucking-p">BIG nummer 59917629103</p></v-card-text>
             </v-card>
         </v-flex>
-        <v-flex xs12 md12 lg6 xl6 d-flex>
+        <v-flex xs12 md12 lg12 xl12 d-flex>
           <v-card>
             <img src=~/assets/images/fotoineke.jpg />
             <v-card-title primary class="title">Ineke Bijloo</v-card-title>
@@ -113,7 +113,7 @@ export default {
   }
 
     .fucking-p {
-    padding: 0 5%;
+    padding: 0 37px 0 5%;
     height: auto;
     text-align: left;
     align-items: center;
@@ -147,5 +147,9 @@ export default {
   .probeerbox {
     width: 40%;
     overflow: scroll;
+  }
+
+  .title {
+    padding: 2% 46px;
   }
 </style>
