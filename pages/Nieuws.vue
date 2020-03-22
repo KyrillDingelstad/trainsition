@@ -6,28 +6,34 @@
     <h1>NIEUWS</h1>
     </div>
     <div class="nieuwsflex">
-      <v-card v-for="(newsitem, key) in newsfeed" :key="key" class="mx-auto" width="50%" min-width="300px" max-width="600px">
-        <v-img :src="newsitem.img" />
-        <v-card-title>{{newsitem.title}}</v-card-title>
-        <v-card-subtitle style="text-align: left">{{newsitem.subtitle}}</v-card-subtitle>
+      <v-container fluid class="newstile">
+        <v-row justify="center">
+          <v-col v-for="(newsitem, key) in newsfeed" :key="key" cols="12" xs="12" sm="12" md="12" lg="12" xl="12" flex>
+            <v-card class="mx-auto" min-width="300px" max-width="600px">
+              <v-img :src="newsitem.img" />
+              <v-card-title>{{newsitem.title}}</v-card-title>
+              <v-card-subtitle style="text-align: left">{{newsitem.subtitle}}</v-card-subtitle>
 
-        <v-expand-transition>
-          <div v-show="show">
-            <v-divider></v-divider>
-            <v-card-text v-for="(paragraph, key) in newsitem.paragraphs" :key="key" class="card-text">
-              <h3>{{paragraph.title}}</h3>
-              
-              <p>{{paragraph.content}}</p>
-            </v-card-text>
-          </div>
-        </v-expand-transition>
+              <v-expand-transition>
+                <div v-show="show">
+                  <v-divider></v-divider>
+                  <v-card-text v-for="(paragraph, key) in newsitem.paragraphs" :key="key" class="card-text">
+                    <h3>{{paragraph.title}}</h3>
+                    
+                    <p>{{paragraph.content}}</p>
+                  </v-card-text>
+                </div>
+              </v-expand-transition>
 
-        <v-card-actions>
-          <v-spacer />
-          <v-btn text @click="show = !show">Lees meer</v-btn>
-          <v-spacer />
-        </v-card-actions>
-      </v-card>
+              <v-card-actions>
+                <v-spacer />
+                <v-btn text @click="show = !show">Lees meer</v-btn>
+                <v-spacer />
+              </v-card-actions>
+            </v-card>
+          </v-col> 
+        </v-row>  
+      </v-container>     
 
       <div class="fb-page fbdiv" data-href="https://www.facebook.com/veiligzwangerambacht" data-tabs="timeline" data-width="300" data-height="800" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
         <blockquote cite="https://www.facebook.com/veiligzwangerambacht" class="fb-xfbml-parse-ignore">
@@ -103,6 +109,17 @@ export default {
     width: 80%;
     background: red;
     margin-bottom: 100px;
+  }
+
+  .newstile {
+    width: 50%;
+    min-width: 300px;
+    align-items: center;
+    background-color: white;
+    background: white;
+    transition: 0.2s all ease;
+    margin-bottom: 60px;
+    margin-top: 60px;
   }
 
   .fbdiv {
