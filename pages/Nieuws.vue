@@ -27,7 +27,7 @@
 
               <v-card-actions>
                 <v-spacer />
-                <v-btn text @click="showMore(key)">Lees meer</v-btn>
+                <v-btn text @click="showMoreClick(key)"><span v-if="key!=show">Lees meer</span> <span v-if="key==show">Minder</span></v-btn>
                 <v-spacer />
               </v-card-actions>
             </v-card>
@@ -75,11 +75,15 @@ export default {
   methods: {
     showModalPrivacy() {this.isModalPrivacyVisible = true;},
     showModalKlachten() {this.isModalKlachtenVisible = true;},
-        
     closeModalPrivacy() {this.isModalPrivacyVisible = false;},
     closeModalKlachten() {this.isModalKlachtenVisible = false;},
-    showMore(key) {
-      this.show = key
+
+    showMoreClick(key) {
+      if(key == this.show) {
+        this.show = null
+      } else {
+        this.show = key
+      }
     }
   }
 };
