@@ -1,42 +1,43 @@
 <template>
   <page class="nieuws">
-    
-    <div id="fb-root"></div>
     <img src="~/assets/images/fotos/krant2.jpg" class="pagestarter">   
 
     <div class=pagetitle>
     <h1>NIEUWS</h1>
     </div>
-        <div class="nieuwsflex">
-            
-              <v-card class="mx-auto" width="50%" min-width="300px" max-width="600px">
-                <img src="~/assets/images/fotos/modalvoeding.jpg" width="100%">
-                <v-card-title>Test titel</v-card-title>
-                <v-card-subtitle style="text-align: left">1,000 miles of wonder</v-card-subtitle>
-                <v-spacer></v-spacer><v-btn icon @click="show = !show">lees meer <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon></v-btn>
+    <div class="nieuwsflex">
+      <v-card v-for="(newsitem, key) in newsfeed" :key="key" class="mx-auto" width="50%" min-width="300px" max-width="600px">
+        <v-img :src="newsitem.img" />
+        <v-card-title>{{newsitem.title}}</v-card-title>
+        <v-card-subtitle style="text-align: left">{{newsitem.subtitle}}</v-card-subtitle>
 
-            
-                <v-expand-transition>
-                  <div v-show="show">
-                    <v-divider></v-divider>
-                    <v-card-text style="text-align: left" margin-right="30px">
-                      <p> Bij ons kan je ook terecht voor voorlichting over anticonceptie en het voorschrijven ervan. We merken dat veel vrouwen het prettig vinden om hiervoor naar ons te komen, voornamelijk vrouwen die ons al kennen vanuit een zwangerschap. Tijdens ons anticonceptiespreekuur geven we je meer informatie over de verschillende anticonceptiemethodes. We bespreken de voor- en nadelen, de werking van het anticonceptiemiddel en we leggen je uit hoe je het middel moet gebruiken. Niet elk anticonceptiemiddel is even geschikt voor iedereen. We bespreken welk anticonceptiemethode het best past bij jouw persoonlijke situatie en schrijven indien gewenst anticonceptie voor.
-                      </p>
-                      <p> Daarbij kan je bij ons ook terecht voor het plaatsen en het verwijderen van een spiraal. We hebben veel ervaring met zowel de hormoonspiraal (Mirena en Kyleena) als de koperspiraal (T-Safe en Ballerine). Op ons spreekuur laten we de verschillende spiralen zien en leggen we uit hoe de werking van elkaar verschilt. Wanneer je hebt besloten welke spiraal je wilt gebruiken, kan je de spiraal afhalen bij de apotheek en maken we een afspraak voor de plaatsing. Meestal is de spiraal eenvoudig en gemakkelijk te plaatsen.
-                      </p>
-
-                    </v-card-text>
-
-                
-                  </div>
-                </v-expand-transition>
-              </v-card>
-            
-            
-          <div class="fb-page fbdiv" data-href="https://www.facebook.com/veiligzwangerambacht" data-tabs="timeline" data-width="300" data-height="800" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/veiligzwangerambacht" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/veiligzwangerambacht">Verloskundige Praktijk Veilig Zwanger Ambacht</a></blockquote>
+        <v-expand-transition>
+          <div v-show="show">
+            <v-divider></v-divider>
+            <v-card-text v-for="(paragraph, key) in newsitem.paragraphs" :key="key" class="card-text">
+              <h3>{{paragraph.title}}</h3>
+              
+              <p>{{paragraph.content}}</p>
+            </v-card-text>
           </div>
-        </div>
-    
+        </v-expand-transition>
+
+        <v-card-actions>
+          <v-spacer />
+          <v-btn text @click="show = !show">Lees meer</v-btn>
+          <v-spacer />
+        </v-card-actions>
+      </v-card>
+
+      <div class="fb-page fbdiv" data-href="https://www.facebook.com/veiligzwangerambacht" data-tabs="timeline" data-width="300" data-height="800" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
+        <blockquote cite="https://www.facebook.com/veiligzwangerambacht" class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/veiligzwangerambacht">
+            Verloskundige Praktijk Veilig Zwanger Ambacht
+          </a>
+        </blockquote>
+      </div>
+    </div>
+
     <page-footer />
   </page>
 </template>
@@ -45,7 +46,7 @@
 // @ is an alias to /src
 import Page from '@/components/Page.vue'
 import Modal from '@/components/Modal.vue'
-import nieuwstegel from '@/modals/nieuws.js'
+import newsfeed from '@/modals/nieuws.js'
 import PageFooter from '@/components/Footer.vue'
 import VueMarkdown from 'vue-markdown'
 
@@ -54,7 +55,7 @@ export default {
     return {
       title: "Nieuws",
       script: [
-        { hid: 'stripe', src: 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0', defer: true }
+        { hid: 'fb', src: 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0', defer: true }
       ]
     }
   },
@@ -69,21 +70,17 @@ export default {
     return {
       isModalPrivacyVisible: false,
       isModalKlachtenVisible: false,
-    };
-    
+      newsfeed: newsfeed,
+      show: false,   
+    }
   },
-  
   methods: {
     showModalPrivacy() {this.isModalPrivacyVisible = true;},
     showModalKlachten() {this.isModalKlachtenVisible = true;},
         
     closeModalPrivacy() {this.isModalPrivacyVisible = false;},
     closeModalKlachten() {this.isModalKlachtenVisible = false;},
-  },
-
-  data: () => ({
-    show: false,
-  }),
+  }
 };
 
 </script>
@@ -123,12 +120,9 @@ export default {
     margin: 30vh 0;
   }
 
-  .fucking-p {
-    padding: 0 5%;
-    height: auto;
-    text-align: left;
-    align-items: center;
-    }
+  .card-text{
+    box-sizing: border-box;
+  }
 
 
 </style>
