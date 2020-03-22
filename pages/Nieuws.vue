@@ -2,7 +2,6 @@
   <page class="nieuws">
     
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
     <img src="~/assets/images/fotos/krant2.jpg" class="pagestarter">   
 
     <div class=pagetitle>
@@ -34,8 +33,8 @@
               </v-card>
             
             
-            <div class="fb-page fbdiv" data-href="https://www.facebook.com/veiligzwangerambacht" data-tabs="timeline" data-width="300" data-height="800" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/veiligzwangerambacht" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/veiligzwangerambacht">Verloskundige Praktijk Veilig Zwanger Ambacht</a></blockquote>
-            </div>
+          <div class="fb-page fbdiv" data-href="https://www.facebook.com/veiligzwangerambacht" data-tabs="timeline" data-width="300" data-height="800" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/veiligzwangerambacht" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/veiligzwangerambacht">Verloskundige Praktijk Veilig Zwanger Ambacht</a></blockquote>
+          </div>
         </div>
     
     <page-footer />
@@ -51,6 +50,14 @@ import PageFooter from '@/components/Footer.vue'
 import VueMarkdown from 'vue-markdown'
 
 export default {
+  head () {
+    return {
+      title: "Nieuws",
+      script: [
+        { hid: 'stripe', src: 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0', defer: true }
+      ]
+    }
+  },
   name: 'nieuws',
   components: {
     Page,
@@ -94,7 +101,7 @@ export default {
     display:inline-flex;
     flex-wrap:wrap;
     flex-direction:row;    
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     width: 80%;
     background: red;
