@@ -4,10 +4,10 @@
         <img src="~/assets/images/fotos/landing.jpg" class=frontpagepic>
         <img src="~/assets/images/logo.png" class=logopng>
         <img src="~/assets/images/icons/mouse2.png" class=mousepng>
-        <div class="landingbuttons">  
+        <!-- <div class="landingbuttons">  
             <router-link to="/contact"><img src="~/assets/images/icons/wphoneicon.png" class=fronticon></router-link> 
             <router-link to="/contact"><img src="~/assets/images/icons/wmailicon.png" class=fronticon></router-link> 
-          </div>
+          </div> -->
           
         </div>
         
@@ -312,25 +312,25 @@ export default {
   
 }
 
-.landingbuttons {
- bottom: 5%;
- right: 5%;
- position: absolute;
- z-index: 99;
- display: flex;
- flex-direction: row;
- align-content: center;
-}
+// .landingbuttons {
+//  bottom: 5%;
+//  right: 5%;
+//  position: absolute;
+//  z-index: 99;
+//  display: flex;
+//  flex-direction: row;
+//  align-content: center;
+// }
 
-.landingbuttons .fronticon {
- width: 45px;
- margin: 15px;
- transition: ease 0.2s;
- }
+// .landingbuttons .fronticon {
+//  width: 45px;
+//  margin: 15px;
+//  transition: ease 0.2s;
+//  }
 
-.landingbuttons .fronticon:hover {
- transform: scale(1.1);
-}
+// .landingbuttons .fronticon:hover {
+//  transform: scale(1.1);
+// }
 
 .carouseldiv {
   width: 100%;
@@ -403,7 +403,7 @@ export default {
   align-items: center;
   }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
   .portrettekst {
   font-size: 2em;
 }

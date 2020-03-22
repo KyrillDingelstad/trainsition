@@ -168,7 +168,7 @@ export default {
     margin-bottom: 15px;
     }
 
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 780px) {
   .expand {
     padding: 0;
   }

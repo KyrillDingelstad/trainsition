@@ -1,8 +1,16 @@
 <template>
+
   <v-app id="app" class="white">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
    
     <img src="~/assets/images/icons/buttonleft2.png" class=navleft @click="next" />
     <img src="~/assets/images/icons/buttonright2.png" class=navright @click="previous"/>
+
+    <v-card color="grey" class=botrightpane>
+      <v-card-text class=panetext>Hallo</v-card-text><v-icon>mdi-call</v-icon>
+      <v-card-text class=panetext>Hallo</v-card-text>
+      <v-card-text class=panetext>Hallo</v-card-text>
+    </v-card>
     
     <v-app-bar app height="64px" flat color="white" light class="appbar" elevate-on-scroll appbar>
 
@@ -211,6 +219,17 @@ export default {
   padding-right:8px;
 }
 
+.botrightpane {
+  position: fixed;
+  z-index: 99;
+  bottom: 5%;
+  right: 30px;
+}
+
+.panetext {
+  padding: 4px 12px;
+}
+
 .navleft {
   height: 35px;
   width: 25px;
@@ -360,7 +379,7 @@ body, html {
 }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
   .appbar .navknopklein {
     display: block;
   }
