@@ -10,9 +10,10 @@
         <v-img :src="newsitem.img" />
         <v-card-title>{{newsitem.title}}</v-card-title>
         <v-card-subtitle style="text-align: left">{{newsitem.subtitle}}</v-card-subtitle>
-
+{{show}}
         <v-expand-transition>
-          <div v-show="show">
+
+          <div v-show="show == key">
             <v-divider></v-divider>
             <v-card-text v-for="(paragraph, key) in newsitem.paragraphs" :key="key" class="card-text">
               <h3>{{paragraph.title}}</h3>
@@ -24,7 +25,7 @@
 
         <v-card-actions>
           <v-spacer />
-          <v-btn text @click="show = !show">Lees meer</v-btn>
+          <v-btn text @click="showMore(key)">Lees meer</v-btn>
           <v-spacer />
         </v-card-actions>
       </v-card>
@@ -51,14 +52,6 @@ import PageFooter from '@/components/Footer.vue'
 import VueMarkdown from 'vue-markdown'
 
 export default {
-  head () {
-    return {
-      title: "Nieuws",
-      script: [
-        { hid: 'fb', src: 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0', defer: true }
-      ]
-    }
-  },
   name: 'nieuws',
   components: {
     Page,
@@ -71,7 +64,7 @@ export default {
       isModalPrivacyVisible: false,
       isModalKlachtenVisible: false,
       newsfeed: newsfeed,
-      show: false,   
+      show: null,   
     }
   },
   methods: {
@@ -80,6 +73,10 @@ export default {
         
     closeModalPrivacy() {this.isModalPrivacyVisible = false;},
     closeModalKlachten() {this.isModalKlachtenVisible = false;},
+    showMore(key) {
+      console.log(key)
+      this.show = key
+    }
   }
 };
 
