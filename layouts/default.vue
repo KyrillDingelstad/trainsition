@@ -1,16 +1,17 @@
 <template>
 
   <v-app id="app" class="white">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
    
     <img src="~/assets/images/icons/buttonleft2.png" class=navleft @click="next" />
     <img src="~/assets/images/icons/buttonright2.png" class=navright @click="previous"/>
 
-    <v-card color="grey" class=botrightpane>
-      <v-card-text class=panetext>Hallo</v-card-text><v-icon>mdi-call</v-icon>
-      <v-card-text class=panetext>Hallo</v-card-text>
-      <v-card-text class=panetext>Hallo</v-card-text>
-    </v-card>
+    <div class=botrightpane>
+      <v-btn small fab class="landingbtn btnphone"><v-icon color="#0059a6">call</v-icon></v-btn><br>
+      <v-btn small fab class="landingbtn btnmail"><v-icon color="#0059a6">mail</v-icon></v-btn><br>
+      <v-btn small fab class="landingbtn btninsta"><img class=paneicon src="~/assets/images/icons/instab.png"></v-btn><br>
+      <v-btn small fab class="landingbtn btnfb"><img class=paneicon src="~/assets/images/icons/fbb.png"></v-btn>
+    </div>
     
     <v-app-bar app height="64px" flat color="white" light class="appbar" elevate-on-scroll appbar>
 
@@ -223,11 +224,18 @@ export default {
   position: fixed;
   z-index: 99;
   bottom: 5%;
-  right: 30px;
+  right: 3%;
+  color: grey;
 }
 
-.panetext {
-  padding: 4px 12px;
+.paneicon {
+  align-self: right;
+  width: 20%;
+}
+
+.landingbtn {
+  margin: 2px;
+  align-items: right;
 }
 
 .navleft {
