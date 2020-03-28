@@ -7,10 +7,26 @@
     <img src="~/assets/images/icons/buttonright2.png" class=navright @click="previous"/>
 
     <div class=botrightpane>
-      <v-btn small fab class="landingbtn btnphone"><v-icon color="#0059a6">call</v-icon></v-btn><br>
-      <v-btn small fab class="landingbtn btnmail"><v-icon color="#0059a6">mail</v-icon></v-btn><br>
-      <v-btn small fab class="landingbtn btninsta"><img class=paneicon src="~/assets/images/icons/instab.png"></v-btn><br>
-      <v-btn small fab class="landingbtn btnfb"><img class=paneicon src="~/assets/images/icons/fbb.png"></v-btn>
+      <div class=botrightpanechild>
+        <v-btn color="#ffffff" rounded class="landingbtn btnphone">
+          <span id="btnphonehov">06 - 151 434 16</span>
+          <v-icon color="#0059a6">call</v-icon></v-btn>
+      </div>
+      <div class=botrightpanechild>
+        <v-btn color="#ffffff" rounded class="landingbtn btnmail">
+          <span id="btnmailhov">info@veiligzwangerambacht.nl</span>
+          <v-icon color="#0059a6">mail</v-icon></v-btn>
+      </div>
+      <div class=botrightpanechild>      
+        <v-btn color="#ffffff" rounded class="landingbtn btninsta">
+          <span id="btninstahov"><a href="https://www.instagram.com/verloskundigen_h.i.ambacht" target="_blank">@verloskundigen-h.i.ambacht</a></span>
+          <img class=paneicon src="~/assets/images/icons/instab.png"></v-btn>
+      </div>
+      <div class=botrightpanechild>      
+        <v-btn color="#ffffff" rounded class="landingbtn btnfb">
+          <span id="btnfbhov"><a href="https://www.facebook.com/veiligzwangerambacht" target="_blank">fb.com/veiligzwangerambacht</a></span>
+          <img class=paneicon src="~/assets/images/icons/fbb.png"></v-btn>
+      </div>
     </div>
     
     <v-app-bar app height="64px" flat color="white" light class="appbar" elevate-on-scroll appbar>
@@ -223,19 +239,60 @@ export default {
 .botrightpane {
   position: fixed;
   z-index: 99;
-  bottom: 5%;
+  bottom: 2%;
   right: 3%;
   color: grey;
 }
 
+.botrightpanechild {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+
 .paneicon {
-  align-self: right;
-  width: 20%;
+  width: 20px;
 }
 
 .landingbtn {
   margin: 2px;
-  align-items: right;
+}
+
+#btnphonehov {
+  margin-right: 15px;
+  display: none;
+}
+
+#btnmailhov {
+  margin-right: 15px;
+  display: none;
+}
+
+#btninstahov {
+  margin-right: 15px;
+  display: none;
+}
+
+#btnfbhov{
+  margin-right: 15px;
+  display: none;
+}
+
+.btnphone:hover #btnphonehov {
+  display:block
+}
+
+.btnmail:hover #btnmailhov {
+  display:block
+}
+
+.btninsta:hover #btninstahov {
+  display:block
+}
+
+.btnfb:hover #btnfbhov {
+  display:block
 }
 
 .navleft {
