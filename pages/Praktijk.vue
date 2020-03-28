@@ -83,13 +83,6 @@ export default {
     Modal,
     PageFooter,
   },
-  beforeRouteEnter (to, from, next) {
-    // called when the route that renders this component is about to
-    // be navigated away from.
-    // has access to `this` component instance
-    console.log(to, from)
-    next()
-  },
   data () {
     return {
       isModalPrivacyVisible: false,

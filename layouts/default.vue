@@ -19,7 +19,7 @@
         <router-link to="/"><img class=appbarlogo src="~/assets/images/icons/logo.png"></router-link>
       <div id="nav" align-items="left">
          
-        <router-link v-for="route in routes" class="navbuttons" :class="{active: $route.path == route.path}" tag="a" :to="route.path">{{route.name}}</router-link>
+        <router-link v-for="route in routes" class="navbuttons" :class="{active: $route.path == route.path}" tag="a" :to="route.path" :key="route.name">{{route.name}}</router-link>
       </div>
     </v-app-bar>
 
@@ -27,7 +27,7 @@
 
      <v-navigation-drawer v-model="drawer" fixed temporary>
       <ul class="pa-0">
-        <li v-for="route in routes"  class="navlistbuttons" :class="{active: $route.path == route.path}"> <router-link tag="a" :to="route.path" :key="route.name">{{route.name}}</router-link></li>
+        <li v-for="route in routes"  class="navlistbuttons" :class="{active: $route.path == route.path}" :key="route.name"><router-link tag="a" :to="route.path">{{route.name}}</router-link></li>
       </ul>
      
     </v-navigation-drawer>
