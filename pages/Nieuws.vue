@@ -18,9 +18,9 @@
                 <div v-show="key==show">
                   <v-divider></v-divider>
                   <v-card-text v-for="(paragraph, key) in newsitem.paragraphs" :key="key" class="card-text">
-                    <h3>{{paragraph.title}}</h3>
+                    <h3 style="text-align:left;">{{paragraph.title}}</h3>
                     
-                    <p>{{paragraph.content}}</p>
+                    <p style="text-align:left;">{{paragraph.content}}</p>
                   </v-card-text>
                 </div>
               </v-expand-transition>
@@ -35,13 +35,13 @@
         </v-row>  
       </v-container>     
 
-      <div class="fb-page fbdiv" data-href="https://www.facebook.com/veiligzwangerambacht" data-tabs="timeline" data-width="300" data-height="800" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
+      <!-- <div class="fb-page fbdiv" data-href="https://www.facebook.com/veiligzwangerambacht" data-tabs="timeline" data-width="300" data-height="800" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
         <blockquote cite="https://www.facebook.com/veiligzwangerambacht" class="fb-xfbml-parse-ignore">
           <a href="https://www.facebook.com/veiligzwangerambacht">
             Verloskundige Praktijk Veilig Zwanger Ambacht
           </a>
         </blockquote>
-      </div>
+      </div> -->
     </div>
 
     <page-footer />
@@ -106,7 +106,7 @@ export default {
     align-items: flex-start;
     justify-content: center;
     width: 80%;
-    background: red;
+    background: white;
     margin-bottom: 100px;
   }
 

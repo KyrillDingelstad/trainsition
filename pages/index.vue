@@ -1,5 +1,5 @@
 <template>
-  <page class="zwanger">
+  <page class="index">
         <div class=frontpicdiv>
         <img src="~/assets/images/fotos/landing.jpg" class=frontpagepic>
         <img src="~/assets/images/logo.png" class=logopng>
@@ -28,6 +28,62 @@
             <strong>Bel:</strong>  06 151 434 16 <br>
             <strong>Mail: </strong> <a href="mailto:info@veiligzwangerambacht.nl">info@veiligzwangerambacht.nl</a></p>
         </div>   
+
+        <div class=extradiv>
+          <div class=aspectwrapper>
+            <v-container class="tileset">
+              <v-row justify="center">
+                  <v-card color="#f5f8fd" flat class=aspecttegel>
+                    <v-card-actions>
+                      <v-col>
+                        <div>
+                          <v-card-title class=aspecttitle>Echo's</v-card-title>
+                          <v-card-subtitle>Bij ons in de praktijk maken we zelf de reguliere echo's.</v-card-subtitle>
+                        </div>
+                      </v-col>
+                      <img class=aspectimg src="~/assets/images/icons/echo.svg"><img>
+                    </v-card-actions>
+                  </v-card>
+
+                  <v-card color="#e6f1fc" flat class=aspecttegel>
+                    <v-card-actions>
+                      <img class=aspectimg src="~/assets/images/icons/dubbelhart.svg"><img>
+                      <v-col>
+                        <div>
+                          <v-card-title class=aspecttitle>Persoonlijk</v-card-title>
+                          <v-card-subtitle>Wij werken met twee verloskundigen, dus je krijgt altijd een bekend gezicht naast je.</v-card-subtitle>
+                        </div>
+                      </v-col>
+                    </v-card-actions>
+                  </v-card>
+
+                  <v-card color="#EBF2F8" flat class=aspecttegel>
+                    <v-card-actions>
+                      <v-col>
+                        <div>
+                          <v-card-title class=aspecttitle>Badbevallingen</v-card-title>
+                          <v-card-subtitle>In onze praktijk hebben we veel ervaring met bevallen in bad. Wij hebben ook een bad te leen.</v-card-subtitle>
+                        </div>
+                      </v-col>
+                      <img class=aspectimg src="~/assets/images/icons/badbevalling.svg"><img>
+                    </v-card-actions>
+                  </v-card>
+
+                  <v-card color="#e4e9ee" flat class=aspecttegel>
+                    <v-card-actions>
+                      <img class=aspectimg src="~/assets/images/icons/anticonceptie.svg"><img>
+                      <v-col>
+                        <div>
+                          <v-card-title class=aspecttitle>Anticonceptie</v-card-title>
+                          <v-card-subtitle>Je kunt bij ons ook terecht voor het plaatsen van spiralen en met vragen over anticonceptie.</v-card-subtitle>
+                        </div>
+                      </v-col>
+                    </v-card-actions>
+                  </v-card>                
+              </v-row>
+            </v-container>
+          </div>
+        </div>
 
         <div class="p-wrapper">
           
@@ -117,6 +173,43 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.extradiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.aspectwrapper {
+  width: 60%;
+  margin-right: 24px;
+}
+
+.aspecttegel {
+  min-width: 350px;
+  max-width: 600px;
+  width: 50%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.aspectimg {
+  max-width: 150px;
+  width: 30%;
+}
+
+.aspecttitle {
+  min-width: 180px;
+}
+
+.tileset {
+  align-items: center;
+  background-color: white;
+  background: white;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
 
 .fotosamen {
   float: right;

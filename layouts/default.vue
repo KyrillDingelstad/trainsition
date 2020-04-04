@@ -10,22 +10,26 @@
       <div class=botrightpanechild>
         <v-btn color="#ffffff" rounded class="landingbtn btnphone">
           <span id="btnphonehov">06 - 151 434 16</span>
-          <v-icon color="#0059a6">call</v-icon></v-btn>
+          <v-icon color="#0059a6">call</v-icon>
+        </v-btn>
       </div>
       <div class=botrightpanechild>
         <v-btn color="#ffffff" rounded class="landingbtn btnmail">
           <span id="btnmailhov">info@veiligzwangerambacht.nl</span>
-          <v-icon color="#0059a6">mail</v-icon></v-btn>
+          <v-icon color="#0059a6">mail</v-icon>
+        </v-btn>
       </div>
       <div class=botrightpanechild>      
         <v-btn color="#ffffff" rounded class="landingbtn btninsta">
           <span id="btninstahov"><a href="https://www.instagram.com/verloskundigen_h.i.ambacht" target="_blank">@verloskundigen-h.i.ambacht</a></span>
-          <img class=paneicon src="~/assets/images/icons/instab.png"></v-btn>
+          <img class=paneicon src="~/assets/images/icons/instab.png">
+        </v-btn>
       </div>
       <div class=botrightpanechild>      
         <v-btn color="#ffffff" rounded class="landingbtn btnfb">
           <span id="btnfbhov"><a href="https://www.facebook.com/veiligzwangerambacht" target="_blank">fb.com/veiligzwangerambacht</a></span>
-          <img class=paneicon src="~/assets/images/icons/fbb.png"></v-btn>
+          <img class=paneicon src="~/assets/images/icons/fbb.png">
+        </v-btn>
       </div>
     </div>
     
@@ -280,19 +284,19 @@ export default {
 }
 
 .btnphone:hover #btnphonehov {
-  display:block
+  display: block;
 }
 
 .btnmail:hover #btnmailhov {
-  display:block
+  display: block;
 }
 
 .btninsta:hover #btninstahov {
-  display:block
+  display: block;
 }
 
 .btnfb:hover #btnfbhov {
-  display:block
+  display: block;
 }
 
 .navleft {
