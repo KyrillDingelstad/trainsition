@@ -5,10 +5,7 @@
         <img src="~/assets/images/fotos/landing.jpg" class="landingimg">
         <v-icon x-large color="dark-grey" class="scrollicon">mdi-chevron-down-box</v-icon>
         <img src="~/assets/images/logo.svg" class="landinglogo">
-       
-      </div>
-
-      
+      </div>      
 
       <div class="introwrap">
         <div class="introdiv">
@@ -25,8 +22,6 @@
           <img class="introfoto" src="~/assets/images/inekesandraintro.jpg">
         </div>
       </div>
-      
-
 
       <div clas="aspectcent">
         <div class="aspectwrapper">
@@ -104,7 +99,6 @@
           <p class="profieltekst">Ineke</p>
         </div>
       </div>
-
     </div>
 
     <page-footer />
@@ -135,7 +129,7 @@ export default {
         '"Op de voorkant een persoonlijk bedankje voor de fijne begeleiding tijdens de bevalling! We hebben het als prettig ervaren en kijken er dan ook fijn naar terug! Door jouw persoonlijke begeleiding hebben we ons nooit een nummer gevoeld! Bedankt dat je me ook deze kant van bevallen hebt mogen laten zien."',
         '"We willen je bedanken voor alle goede zorgen tijdens de zwangerschap, bevalling en in het kraambed. We zijn erg blij met jouw begeleiding en je goede adviezen. We kijken zeer tevreden terug op je begeleiding tijdens de thuisbevalling. Het voelde vertrouwd en heel persoonlijk. We hadden van tevoren nooit gedacht dat we thuis zouden bevallen, maar het is het mooiste wat er is."',
         '"Bedankt voor alle goede zorgen en je begeleiding tijdens de zwangerschap, maar vooral tijdens de bevalling! Je was een rots in de branding. Je hebt ons er echt doorheen gesleept."',
-      ],
+      ]
     };
     
   },
