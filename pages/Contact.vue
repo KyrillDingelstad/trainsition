@@ -103,7 +103,7 @@
             Verstuur
           </v-btn>
           <span v-if="captchaError" style="color: red">
-            Er is iets mis gegaan. Probeer het alstublieft nogmaals.
+            <br>Er is iets mis gegaan. Probeer het alstublieft nogmaals.
           </span>
         </v-form>
       </div>

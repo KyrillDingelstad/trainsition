@@ -20,7 +20,7 @@
                   <v-card-text v-for="(paragraph, key) in newsitem.paragraphs" :key="key" class="card-text">
                     <h3 style="text-align:left;">{{paragraph.title}}</h3>
                     
-                    <p style="text-align:left;">{{paragraph.content}}</p>
+                    <vue-markdown style="text-align:left;">{{paragraph.content}}</vue-markdown>
                   </v-card-text>
                 </div>
               </v-expand-transition>
@@ -138,6 +138,11 @@ export default {
 
   .card-text{
     box-sizing: border-box;
+    padding: 0 16px;
+
+    &:first-of-type {
+      margin-top: 16px;
+    }
   }
 
 

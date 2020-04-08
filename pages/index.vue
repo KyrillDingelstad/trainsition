@@ -3,11 +3,11 @@
     <div class="centreer">
       <div class="landingimgdiv">
         <img src="~/assets/images/fotos/landing.jpg" class="landingimg">
-        <v-icon x-large color="dark-grey" class="scrollicon">mdi-chevron-down-box</v-icon>
+        <v-icon color="#ffffff" x-large class="scrollicon">mdi-chevron-down-circle</v-icon>
         <img src="~/assets/images/logo.svg" class="landinglogo">
       </div>      
 
-      <div class="introwrap">
+      <div id="introwrap">
         <div class="introdiv">
           <div class="introtekst">
             <h2>Zwanger? Altijd bijzonder</h2><br>
@@ -16,8 +16,8 @@
             <p>Woon je in Hendrik Ido Ambacht of omgeving en heb je vragen over zwangerschap, bevalling of kraambed? Bel of mail ons dan.</p>
             <p>Sandra Suylen en Ineke Bijloo</p>
 
-            <v-icon small color="#0059a6">call</v-icon> Dit is een telefoonnummer<br>
-            <v-icon small color="#0059a6">mail</v-icon> info@veiligzwangerambacht.nl
+            <v-icon small color="#0059a6">call</v-icon> <a href="tel: 0615143416">06 151 434 16</a><br>
+            <v-icon small color="#0059a6">mail</v-icon> <router-link to="/contact">info@veiligzwangerambacht.nl</router-link>
           </div>  
           <img class="introfoto" src="~/assets/images/inekesandraintro.jpg">
         </div>
@@ -91,11 +91,11 @@
 
       <div class="profieldiv">
         <div class="profielding">
-          <router-link to="/praktijk"><img class="profieldingfoto" src="~/assets/images/portretsandra.png"></router-link>
+          <router-link to="/praktijk"><img class="profieldingfoto" src="~/assets/images/portretsandra2.png"></router-link>
           <p class="profieltekst">Sandra</p>
         </div>
         <div class="profielding">
-          <router-link to="/praktijk"><img class="profieldingfoto" src="~/assets/images/portretineke.png"></router-link>
+          <router-link to="/praktijk"><img class="profieldingfoto" src="~/assets/images/portretineke2.png"></router-link>
           <p class="profieltekst">Ineke</p>
         </div>
       </div>
@@ -145,6 +145,10 @@ export default {
 
 <style>
 
+html {
+  scroll-behavior: smooth;
+}
+
 .centreer {
   width: 100%;
   display: flex;
@@ -168,7 +172,7 @@ export default {
 
 /* intro stukje */
 
-.introwrap {
+#introwrap {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -181,12 +185,14 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .introtekst {
   text-align: left;
   width: 40%;
   min-width: 250px;
+  margin: 5px;
 }
 
 .introfoto {
@@ -194,7 +200,7 @@ export default {
   min-width: 250px;
   object-fit: cover;
   object-position: 43% 50%;
-  margin-left: 10px;
+  margin: 5px;
 }
 
 /* Landing opmaak */
@@ -284,7 +290,16 @@ export default {
 
 .profieldingfoto {
   width: 90%;
+  filter: drop-shadow(1px 3px 5px #8a8a8a);
 }
+
+.profieldingfoto:hover {
+  transition: all .2s ease-in-out;
+  transform: scale(1.05);
+  filter: drop-shadow(3px 5px 7px #8a8a8a);
+}
+
+
 
 .profieltekst {  
   font-family: 'Dancing Script', cursive;

@@ -3,19 +3,19 @@
   <v-app id="app" class="white">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
    
-    <img src="~/assets/images/icons/buttonleft2.png" class=navleft @click="next" />
-    <img src="~/assets/images/icons/buttonright2.png" class=navright @click="previous"/>
+    <img src="~/assets/images/icons/navigate.svg" class=navleft @click="next" />
+    <img src="~/assets/images/icons/navigate.svg" class=navright @click="previous"/>
 
     <div class=botrightpane>
       <div class=botrightpanechild>
         <v-btn color="#ffffff" rounded class="landingbtn btnphone">
-          <span id="btnphonehov">06 - 151 434 16</span>
+          <span id="btnphonehov"><a href="tel: 0615143416">06 151 434 16</a></span>
           <v-icon color="#0059a6">call</v-icon>
         </v-btn>
       </div>
       <div class=botrightpanechild>
         <v-btn color="#ffffff" rounded class="landingbtn btnmail">
-          <span id="btnmailhov">info@veiligzwangerambacht.nl</span>
+          <span id="btnmailhov"><router-link to="/contact">info@veiligzwangerambacht.nl</router-link></span>
           <v-icon color="#0059a6">mail</v-icon>
         </v-btn>
       </div>
@@ -300,8 +300,9 @@ export default {
 }
 
 .navleft {
-  height: 35px;
-  width: 25px;
+  transform: scaleX(-1);
+  height: 50px;
+  width:  35px;
   left: 5%;
   margin-left: -12px;
   top: 50%;
@@ -310,8 +311,8 @@ export default {
 }
 
 .navright {
-  height: 35px;
-  width: 25px;
+  height: 50px;
+  width: 35px;
   right: 5%;
   margin-right: -12px;
   top: 50%;
