@@ -323,7 +323,7 @@ export default {
 body, html {
   margin: 0;
   overflow-x: hidden;
-  overflow-y:hidden!important;
+  overflow-y: auto!important;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -331,7 +331,6 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  overflow: hidden;
 }
 
 .appbarlogo {
