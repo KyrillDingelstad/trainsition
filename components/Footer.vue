@@ -21,9 +21,9 @@
                 <br>
                 <strong>CONTACT</strong><br>
                 TELEFOON<br>
-                06 151 434 16<br><br>
+                <a href="tel: 0615143416">06 151 434 16</a><br><br>
                 <strong>E-MAIL</strong><br>
-                info@veiligzwangerambacht.nl<br>
+                <router-link to="/contact">info@veiligzwangerambacht.nl</router-link><br>
                 </v-card>
 
                 <v-card color="rgba(233, 233, 233, 1)" flat width="200">

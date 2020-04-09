@@ -198,6 +198,7 @@ html {
 .introfoto {
   width: 40%;
   min-width: 250px;
+  max-height: 600px;
   object-fit: cover;
   object-position: 43% 50%;
   margin: 5px;

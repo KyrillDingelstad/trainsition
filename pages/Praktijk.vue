@@ -20,11 +20,8 @@
 
     <p class=standaardp>Sandra en Ineke staan allebei ingeschreven in het kwaliteitsregister van de KNOV. </p>
         
-    
-    <v-container fluid grid-list-xl class="tilesetp">
-      <v-layout align-content-start align-start justify-center row fill-height>
-        <v-flex xs12 md12 lg12 xl12 d-flex>
-          <v-card>
+    <div class=persoonwrapper>
+          <v-card class="tilesetp">
             <img src=~/assets/images/fotosandra.jpg />
             <v-card-title primary class="title">Sandra Suylen</v-card-title>
             <v-card-text> 
@@ -42,9 +39,10 @@
 
               <p class="fucking-p">BIG nummer 59917629103</p></v-card-text>
             </v-card>
-        </v-flex>
-        <v-flex xs12 md12 lg12 xl12 d-flex>
-          <v-card>
+    </div>
+
+    <div class=persoonwrapper>
+          <v-card class="tilesetp">
             <img src=~/assets/images/fotoineke.jpg />
             <v-card-title primary class="title">Ineke Bijloo</v-card-title>
             <v-card-text> 
@@ -60,9 +58,8 @@
 
               <p class="fucking-p">BIG nummer 99020423803</p> </v-card-text>
             </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
+    </div>
+
     
   <page-footer />
 
@@ -101,11 +98,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
   .praktijktop {
     object-position: 0px 60%;
   }
 
-    .fucking-p {
+  .fucking-p {
     padding: 0 37px 0 5%;
     height: auto;
     text-align: left;
@@ -118,28 +116,30 @@ export default {
     width: 92%;
     align-items: center;
   }
-  
+
+  .persoonwrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }  
+
   .praktijk {
     background: white;
   }
 
-.tilesetp {
+  .tilesetp {
     width: 40%;
     min-width: 300px;
+    max-width: 800px;
     align-items: center;
     background-color: white;
     background: white;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 
     img {
       width: 100%;
     }
-  }
-
-  .probeerbox {
-    width: 40%;
-    overflow: scroll;
   }
 
   .title {

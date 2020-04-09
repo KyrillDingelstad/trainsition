@@ -6,7 +6,8 @@
     >
       <v-card>
         <v-card-text>
-          <p class=standaardp> Bedankt voor je bericht. Je krijgt een mail ter bevestiging van ontvangst. </p>
+          <h2 style="padding-top:24px">Bedankt voor je bericht!</h2>
+          <p class=standaardp>Je krijgt een mail ter bevestiging van ontvangst. </p>
         </v-card-text>
 
         <v-divider></v-divider>
@@ -111,7 +112,7 @@
     <div class=adresbalk>
       <div class=adrestext>
         <div class="column">
-          <p class=standardp><strong>Telefoon</strong><br> 06-151 434 16</p>
+          <p class=standardp><strong>Telefoon</strong><br> <a href="tel: 0615143416">06 151 434 16</a></p>
           <p class=standardp><strong>Bij storing</strong><br> 085-773 3326</p>
           <p class=standardp><strong>E-mail</strong><br> info@veiligzwangerambacht.nl</p>
         </div>
