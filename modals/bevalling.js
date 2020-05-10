@@ -5,6 +5,7 @@ export default {
     voorbereiding: {
         img: require(`~/assets/images/fotos/modalvoorbereiding.jpg`),
         title: "Voorbereiding",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Bevallen hoef je niet te leren. Net zoals dat je lichaam weet hoe het een kind moet laten groeien in je buik, weet je lichaam ook hoe je moet bevallen. Jouw lichaam kan dat vanzelf, daar heb je een natuurinstinct voor. Een voorbereiding is voornamelijk bedoeld om je geestelijk voor te bereiden op de bevalling. Want wat een bevalling lastig maakt zijn je gevoelens en je gedachtes. Tijdens een bevalling is het belangrijk om op jezelf te vertrouwen en je over te geven aan de weeën. Jouw lichaam krijgt op die manier de rust en de ruimte om te doen wat het moet doen."
@@ -56,6 +57,7 @@ export default {
     bevalling: {
         img: require(`~/assets/images/fotos/modalbevalling.jpg`),
         title: "De bevalling",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Een zwangerschap duurt gemiddeld 40 weken als je rekent vanaf de eerste dag van je laatste menstruatie. Dat is een schatting, want wanneer de baby zich precies aandient kan je bij een normale bevalling van tevoren niet weten. De baby mag vanaf 37 weken zwangerschap geboren worden en het liefst willen we dat de baby er voor 42 weken is. Je hebt dus 5 weken de tijd om te bevallen. Er zijn slechts weinig kinderen die voor een zwangerschapsduur van 39 weken worden geboren en de meeste baby’s komen het liefst wat later. Stel je er dus op in dat de kans groot is dat de baby pas na de uitgerekende datum komt."
@@ -85,6 +87,7 @@ export default {
     belinstructies: {
         img: require(`~/assets/images/fotos/modalbelinstructies2.jpg`),
         title: "Belinstructies",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Wanneer je een vraag hebt, ongerust bent of je hebt onze hulp nodig, dan mag je ons altijd bellen. Wij staan dag en nacht voor jou paraat. Je kan ons bellen op het gebruikelijke nummer. Is het dringend en nemen wij de telefoon niet direct op, bel dan meteen een 2e keer erachteraan. Mocht er iets bijzonders met de telefoonlijn zijn, dan kan je ons ook altijd bereiken via het storingsnummer."
@@ -99,6 +102,7 @@ export default {
     bevalhoudingen: {
         img: require(`~/assets/images/fotos/modalbevalhoudingen.jpg`),
         title: "Bevalhoudingen",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Er zijn veel verschillende houdingen die je helpen tijdens de bevalling. Staand, gehurkt, in bad, onder de douch, op handen en knieën, leunend over de bal, op de baarkruk… Elke houding heeft zijn eigen werking en helpt de baby om zijn weg naar buiten te vinden. Welke houding voor jou het meest geschikt is ontdek je vaak pas tijdens de bevalling door de verschillende houdingen uit te proberen. Het uitproberen en regelmatig wisselen van houdingen is van groot belang voor een voorspoedig verloop van de bevalling. Het zorgt ervoor dat je bekken groter wordt en het helpt de baby om makkelijker door het bekken te gaan. De bevalling gaat hierdoor sneller en je hebt daardoor ook minder pijn. Het wisselen van houdingen heeft niet alleen veel voordelen voor jezelf, ook je kind heeft hier baat bij. Door regelmatig te wisselen van houding gaat er tijdens de bevalling meer zuurstof door de placenta naar de baby toe. Baby’s hebben hierdoor minder stress tijdens de bevalling."
@@ -110,7 +114,7 @@ export default {
             content: " In welke houding je uiteindelijk bevalt bepaal je helemaal zelf. Zolang het medisch verantwoord is vinden wij geen enkele houding te gek. Vrouwen die zelf hun bevalhouding kiezen kijken positiever terug op hun bevalling, hebben minder vaak pijnmedicatie nodig en bevallen sneller. En daar gaan we voor!"
         }, {
             title: "",
-            content: "Het is handig om als voorbereiding op je bevalling alvast verschillende houdingen op te zoeken en uit te proberen. Zo weet je wat er mogelijk is en kan je de houdingen alvast eens ervaren. Natuurlijk helpen wij ook mee om de geschikte houding voor jou te vinden. In <a href='https://deverloskundige.nl/uploads/deverloskundige.nl/knov_client_downloads/41/file/KN_folder_A5_bevalhoudingen_HR_digitaal.pdf' target='_blank'>deze folder</a> kan je verschillende houdingen opzoeken, maar er is nog veel meer."
+            content: "Het is handig om als voorbereiding op je bevalling alvast verschillende houdingen op te zoeken en uit te proberen. Zo weet je wat er mogelijk is en kan je de houdingen alvast eens ervaren. Natuurlijk helpen wij ook mee om de geschikte houding voor jou te vinden. In <a href='https://deverloskundige.nl/uploads/deverloskundige.nl/knov_client_downloads/41/file/KN_folder_A5_bevalhoudingen_HR_digitaal.pdf' target='_blank' rel='noreferrer'>deze folder</a> kan je verschillende houdingen opzoeken, maar er is nog veel meer."
         }, {
             title: "",
             content: "Wil je tijdens je bevalling gebruik maken van de baarkruk of het bevalbad. Dat kan gerust, deze kan je via ons lenen en hoef je zelf niet aan te schaffen."
@@ -122,6 +126,7 @@ export default {
     bevalleninwater: {
         img: require(`~/assets/images/fotos/modalbevalleninwater.jpg`),
         title: "Bevallen in water",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Steeds meer Ambachtse kinderen worden onder water geboren en steeds meer aanstaande moeders kiezen bewust voor een badbevalling. Dat verbaast ons niet, want bevallen in water heeft namelijk allerlei voordelen."
@@ -148,6 +153,7 @@ export default {
     waarbevallen: {
         img: require(`~/assets/images/fotos/modalwaarbevallen.jpg`),
         title: "Waar bevallen",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Of je thuis wilt bevallen of in het ziekenhuis bepaal je zelf. Alleen als er sprake is van medische noodzaak of een indicatie, is het ziekenhuis de aangewezen plaats. Afhankelijk van de situatie vindt de bevalling dan plaats onder verantwoordelijkheid van ons of van een gynaecoloog."
@@ -165,6 +171,7 @@ export default {
     benodigdheden: {
         img: require(`~/assets/images/fotos/modalbenodigdheden.jpg`),
         title: "Benodigdheden",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Wat heb je nodig voor een thuisbevalling\n - Kleding voor de baby: romper met lange mauwen, bovenkleding, 2 mutsjes, sokken, luier. De meeste pasgeboren baby’s passen in maat 50-56. \n- Een omslagdoek. \n- 2 ijzeren kruiken met kruikenzak of hydrofiele luier voor eromheen. \n - 10 hydrofiele luiers of handdoeken om de baby af te drogen en warm te houden. \n- Digitale thermometer. Deze zit in het kraampakket. \n- Een rol grote vuilniszakken. \n- Een emmer of plastic teiltje. \n- Een paar (oude) washandjes. \n- Matrasbeschermer. Het handigst is een waterdichte molton. In het kraampakket zit een plastic zeil die ook gebruikt kan worden, maar deze zijn vaak iets te klein en verschuiven makkelijk. \n- 10 celstofmatjes (ook wel onderleggers genoemd). Deze zitten in het kraampakket. \n- Een pak grote steriele gaasjes van 10x10 cm. Dit zit in het kraampakket. \n- Wc-rol of keukenpapier. \n- Een ondersteek (gratis te huur bij de thuiszorgwinkel). \n- Kraamverband, dit zit in het kraampakket."

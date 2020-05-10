@@ -3,32 +3,32 @@
   <v-app id="app" class="white">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
    
-    <img src="~/assets/images/icons/navigate.svg" class=navleft @click="next" />
-    <img src="~/assets/images/icons/navigate.svg" class=navright @click="previous"/>
+    <img src="~/assets/images/icons/navigate.svg" class=navleft @click="next" alt="navigeerknop links" />
+    <img src="~/assets/images/icons/navigate.svg" class=navright @click="previous" alt="navigeerknop rechts" />
 
     <div class=botrightpane>
       <div class=botrightpanechild>
-        <v-btn color="#ffffff" rounded class="landingbtn btnphone">
+        <v-btn color="#ffffff" rounded class="landingbtn btnphone" aria-label="Phone button">
           <span id="btnphonehov"><a href="tel: 0615143416">06 151 434 16</a></span>
           <v-icon color="#0059a6">call</v-icon>
         </v-btn>
       </div>
       <div class=botrightpanechild>
-        <v-btn color="#ffffff" rounded class="landingbtn btnmail">
+        <v-btn color="#ffffff" rounded class="landingbtn btnmail" aria-label="Navigate to contact page">
           <span id="btnmailhov"><router-link to="/contact">info@veiligzwangerambacht.nl</router-link></span>
           <v-icon color="#0059a6">mail</v-icon>
         </v-btn>
       </div>
       <div class=botrightpanechild>      
-        <v-btn color="#ffffff" rounded class="landingbtn btninsta">
-          <span id="btninstahov"><a href="https://www.instagram.com/verloskundigen_h.i.ambacht" target="_blank">@verloskundigen-h.i.ambacht</a></span>
-          <img class=paneicon src="~/assets/images/icons/instab.png">
+        <v-btn color="#ffffff" rounded class="landingbtn btninsta" aria-label="Instagram link">
+          <span id="btninstahov"><a href="https://www.instagram.com/veiligzwangerambacht" target="_blank" rel="noreferrer">@veiligzwangerambacht</a></span>
+          <img class=paneicon src="~/assets/images/icons/instab.png" alt="instagram knop" />
         </v-btn>
       </div>
       <div class=botrightpanechild>      
-        <v-btn color="#ffffff" rounded class="landingbtn btnfb">
-          <span id="btnfbhov"><a href="https://www.facebook.com/veiligzwangerambacht" target="_blank">fb.com/veiligzwangerambacht</a></span>
-          <img class=paneicon src="~/assets/images/icons/fbb.png">
+        <v-btn color="#ffffff" rounded class="landingbtn btnfb" aria-label="Facebook link">
+          <span id="btnfbhov"><a href="https://www.facebook.com/veiligzwangerambacht" target="_blank" rel="noreferrer">fb.com/veiligzwangerambacht</a></span>
+          <img class=paneicon src="~/assets/images/icons/fbb.png" alt="facebook knop" />
         </v-btn>
       </div>
     </div>
@@ -36,11 +36,12 @@
     <v-app-bar app height="64px" flat color="white" light class="appbar" elevate-on-scroll appbar>
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="navknopklein"></v-app-bar-nav-icon>
-        <router-link to="/"><img class=appbarlogo src="~/assets/images/icons/logo.png"></router-link>
+        <router-link to="/"><img class=appbarlogo src="~/assets/images/icons/logo.png" alt="verloskundige praktijk logo navigatie" /></router-link>
       <div id="nav" align-items="left">
          
         <router-link v-for="route in routes" class="navbuttons" :class="{active: $route.path == route.path}" tag="a" :to="route.path" :key="route.name">{{route.name}}</router-link>
       </div>
+      <router-link to="/contact" class="inschrijvenknop"><v-btn color="#0059a6" rounded small class="white--text">Nu inschrijven</v-btn></router-link>
     </v-app-bar>
 
     
@@ -71,8 +72,8 @@ export default {
           path: '/'
         },
         {
-          name: 'Praktijk',
-          path: '/praktijk'
+          name: 'Verloskundige',
+          path: '/verloskundige'
         },
         {
           name: 'Zwanger',
@@ -449,7 +450,7 @@ body, html {
 }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 985px) {
   .appbar .navknopklein {
     display: block;
   }
@@ -462,6 +463,10 @@ body, html {
   
   .appbar .v-toolbar__content {
     width: 100%!important
+  }
+
+  .inschrijvenknop {
+    margin-left: calc(100% - 250px);
   }
 
 }

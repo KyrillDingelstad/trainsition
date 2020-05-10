@@ -1,6 +1,6 @@
 <template>
   <page class="nieuws">
-    <img src="~/assets/images/fotos/krant2.jpg" class="pagestarter">   
+    <img src="~/assets/images/fotos/krant2.jpg" class="pagestarter" alt="nieuws pagina header" />   
 
     <div class=pagetitle>
     <h1>NIEUWS</h1>
@@ -10,7 +10,7 @@
         <v-row justify="center">
           <v-col v-for="(newsitem, key) in newsfeed" :key="key" cols="12" xs="12" sm="12" md="12" lg="12" xl="12" flex>
             <v-card class="mx-auto" min-width="300px" max-width="600px">
-              <v-img :src="newsitem.img" />
+              <v-img :src="newsitem.img" :alt="newsitem.alt" />
               <v-card-title>{{newsitem.title}}</v-card-title>
               <v-card-subtitle style="text-align: left">{{newsitem.subtitle}}</v-card-subtitle>
 
@@ -58,6 +58,12 @@ import VueMarkdown from 'vue-markdown'
 
 export default {
   name: 'nieuws',
+  head: {
+    title: 'Veilig Zwanger Ambacht - Nieuws',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Op onze nieuwspagina lees je over nieuwe ontwikkelingen rondom het zwangerschap en veranderingen in onze Verloskundige praktijk.' }
+      ],
+    },  
   components: {
     Page,
     Modal,

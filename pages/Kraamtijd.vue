@@ -1,6 +1,6 @@
 <template>
   <page class="kraamtijd">
-         <img src="~/assets/images/fotos/baby1.jpg" class="pagestarter kraamtijdtop">
+         <img src="~/assets/images/fotos/baby1.jpg" class="pagestarter kraamtijdtop" alt="kraamtijd pagina header" />
 
     <div class=pagetitle>
     <h1>KRAAMTIJD</h1>
@@ -14,7 +14,7 @@
       <v-row justify="center">
         <v-col  v-for="(modal, key) in modals" :key="modal.id" cols="12" xs="12" sm="12" md="6" lg="4" xl="4">
           <v-card class=tegeltje @click="openModal(key)">
-            <img :src="modal.img" />
+            <img :src="modal.img" :alt="modal.alt" />
             <v-card-title primary h1> <vue-markdown> {{modal.title}} </vue-markdown> </v-card-title>
           </v-card>
         </v-col>
@@ -81,6 +81,12 @@ import PageFooter from '@/components/Footer.vue'
 
 export default {
   name: 'kraamtijd',
+  head: {
+    title: 'Veilig Zwanger Ambacht - Kraamtijd',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Vind hier de basisinformatie over eerste weken van de zorg van je pasgeboren baby.' }
+        ],
+    },
   components: {
     Page,
     Modal,
@@ -93,6 +99,11 @@ export default {
         modals: modals,
     };
     
+  },
+  mounted() {
+      if(this.$route.query.modal) {
+          this.openModal(this.$route.query.modal)
+      }
   },
   methods: {
     openModal(modal) {

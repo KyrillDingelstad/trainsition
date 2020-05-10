@@ -24,13 +24,13 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <img src="~/assets/images/fotos/contacttop.jpg" class="pagestarter contacttop">   
+    <img src="~/assets/images/fotos/contacttop.jpg" class="pagestarter contacttop" alt="verloskundige praktijk contact pagina header" />   
     <div class=pagetitle>
     <h1>CONTACT</h1>
 
     </div>
 
-    <p class=standaardp>Heb je vragen over zwangerschap en geboorte of wil je je aanmelden bij onze praktijk, dan kan je ons bellen of een mail sturen.</p>
+    <p class=standaardp>Heb je vragen over zwangerschap en geboorte of wil je je aanmelden bij onze praktijk, dan kan je ons bellen, het contactformulier hieronder invullen of een mail sturen.</p>
     <p class=standaardp>Voor hulp bij de bevalling, dringende vragen of spoedsituaties zijn we altijd bereikbaar.</p>
     <p class=standaardp>Je kunt ons dag en nacht bereiken door te bellen op ons gebruikelijke mobiele nummer. Mocht er iets bijzonders met de telefoonlijn zijn waardoor wij jouw oproep niet ontvangen, dan kan je ons bereiken via het storingsnummer.</p>
 
@@ -112,23 +112,25 @@
     <div class=adresbalk>
       <div class=adrestext>
         <div class="column">
-          <p class=standardp><strong>Telefoon</strong><br> <a href="tel: 0615143416">06 151 434 16</a></p>
-          <p class=standardp><strong>Bij storing</strong><br> 085-773 3326</p>
-          <p class=standardp><strong>E-mail</strong><br> info@veiligzwangerambacht.nl</p>
+          <p><span class=contactp><strong>Telefoon</strong></span><br><span class=standarp><a href="tel: 0615143416">06 151 434 16</a></span></p>
+          <p><span class=contactp><strong>Bij storing</strong></span><span class=standardp><br> 085-773 3326</span></p>
+          <p><span class=contactp><strong>E-mail</strong><br></span><span class=standardp> info@veiligzwangerambacht.nl</span></p>
         </div>
            
     
         <div class="column">
-          <p class=standardp><strong>Spreekuur</strong><br>
-          <p class=standardp>DE ZEESTER<br>
-          Tromplaan 49<br>
-          3342TR H.I. Ambacht</p>
+          <p class=contactp style="margin-bottom:0;"><strong>Spreekuur</strong></p>
+          <h3>Gezondheidscentrum De Zeester</h3>
+          <p class=standardp>Tromplaan 49<br>
+          3342TR Hendrik Ido Ambacht</p>
         </div>
 
       </div>
     </div>
 
-    <iframe class=ifreem src="https://snazzymaps.com/embed/178232" style="border:none;"></iframe>
+    <p class=standaardp><strong>Let op!</strong> Sinds kort is ons postadres veranderd van Ridderkerk naar Hendrik Ido Ambacht. Wil je ons iets via de post sturen dan kan dit gewoon naar ons spreekuuradres op Gezondheidscentrum De Zeester.</p>
+
+    <iframe class=ifreem src="https://snazzymaps.com/embed/178232" style="border:none;" title="Kaart locatie praktijk"></iframe>
 
     <page-footer />
   </page>
@@ -144,6 +146,12 @@ import PageFooter from '@/components/Footer.vue'
 
 export default {
   name: 'contact',
+  head: {
+    title: 'Veilig Zwanger Ambacht - Contact',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Vind hier onze contactgegevens of gebruik het formulier om een bericht te sturen naar onze Verloskundige Praktijk.' }
+      ],
+    },
   data () {
     return { 
       isModalPrivacyVisible: false,
@@ -240,6 +248,7 @@ export default {
     background-color: rgb(235, 242, 248);
     display: inline-block;
     margin-top: 60px;
+    margin-bottom: 40px;
   }
 
   .adrestext{
@@ -260,12 +269,16 @@ export default {
     background: white;
   }
 
+  .contactp {
+    font-size: 1.2em;
+  }
+
   .ifreem {
     align-items: center;
     min-width: 300px;
     width: 50%;
     height: 50%;
-    margin: 100px 0;
+    margin: 50px 0 100px 0;
   }
 
   .adres {

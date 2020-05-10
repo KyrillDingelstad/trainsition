@@ -1,29 +1,29 @@
 <template>
-  <page class="praktijk">
-    <img src="~/assets/images/praktijktop.jpg" class="pagestarter praktijktop">
+  <page class="verloskundige">
+    <img src="~/assets/images/praktijktop.jpg" class="pagestarter praktijktop" alt="verloskundige praktijk pagina header" />
 
     
     <div class=pagetitle>
-    <h1>PRAKTIJK</h1>
+    <h1>De verloskundigenpraktijk</h1>
     </div>
 
-    <p class=standaardp>Veilig Zwanger Ambacht is een betrokken en kleinschalige verloskundigenpraktijk. Wij werken in de praktijk met twee verloskundigen, Sandra en Ineke. Zo krijg je tijdens de zwangerschap en bij de bevalling altijd een bekende en vertrouwde verloskundige.</p>
+    <p class=standaardp>Veilig Zwanger Ambacht is een betrokken en kleinschalige verloskundigenpraktijk in Hendrik Ido Ambacht. Wij werken in de praktijk met twee verloskundigen, Sandra en Ineke. Zo krijg je tijdens de zwangerschap en bij de bevalling altijd een bekende en vertrouwde verloskundige.</p>
 
-    <p class=standaardp>Sandra werkt het merendeel, Ineke doet regelmatig spreekuren en werkt op de momenten dat Sandra vrij is, zich moet bijscholen of anderszins.</p>
+    <p class=standaardp>Sandra werkt het merendeel, Ineke is regelmatig aanwezig en werkt op de momenten dat Sandra vrij is, zich moet bijscholen of anderszins.</p>
 
     <p class=standaardp>Ons sterke punt is de kleinschaligheid van de praktijk en onze nauwe samenwerking. Je leert ons tijdens de zwangerschap goed kennen en zo ontstaat er een vertrouwensband. In de loop der jaren hebben we gemerkt hoe belangrijk een vertrouwensband is.
     Deze band helpt je veilig te voelen, te kunnen ontspannen en is een voorwaarde om vertrouwen in je lichaam te krijgen. Dit vertrouwen is essentieel voor een goed verloop van je zwangerschap, bevalling en het nieuwe ouderschap.</p>
 
     <p class=standaardp>Ook al zijn we kleinschalig, bij ons in de verloskundigenpraktijk bieden we zorg rondom de zwangerschap zo breed mogelijk aan. Dit betekent dat je bij ons naast verloskundige zorg ook terecht kunt voor vragen over zwanger worden, echo’s en anticonceptie.</p>
     
-    <p class=standaardp>Sandra is naast verloskundige ook echoscopiste.  </p>
+    <p class=standaardp>Sandra is naast verloskundige ook echoscopiste. Zij maakt alle reguliere zwangerschapsecho's.  </p>
 
-    <p class=standaardp>Sandra en Ineke staan allebei ingeschreven in het kwaliteitsregister van de KNOV. </p>
+    <p class=standaardp>Sandra en Ineke staan allebei ingeschreven in het kwaliteitsregister van de KNOV, de beroepsvereniging van verloskundigen. </p>
         
     <div class=persoonwrapper>
           <v-card class="tilesetp">
-            <img src=~/assets/images/fotosandra.jpg />
-            <v-card-title primary class="title">Sandra Suylen</v-card-title>
+            <img src="~/assets/images/fotosandra.jpg" alt="verloskundige sandra voorstellen foto" />
+            <h2 class="title">Sandra Suylen</h2>
             <v-card-text> 
               <p class="fucking-p">Een zwangerschap, een bevalling, het begin van een nieuw leven. Elke keer geniet ik van deze bijzondere momenten en dat ik daar bij mag zijn vind ik heel bijzonder.</p>
 
@@ -43,8 +43,8 @@
 
     <div class=persoonwrapper>
           <v-card class="tilesetp">
-            <img src=~/assets/images/fotoineke.jpg />
-            <v-card-title primary class="title">Ineke Bijloo</v-card-title>
+            <img src="~/assets/images/fotoineke.jpg" alt="verloskundige ineke voorstellen foto" />
+            <h2 primary class="title">Ineke Bijloo</h2>
             <v-card-text> 
               <p class="fucking-p">Meer dan 25 jaar geleden is een grote wens van mij vervuld: verloskundige worden. Het ondersteunen van mensen in zo’n speciale periode van hun leven en het mogen begeleiden van de geboorte van een nieuw mensenkind is het meest bijzondere wat ik ken.</p>
 
@@ -75,6 +75,12 @@ import PageFooter from '@/components/Footer.vue'
 
 export default {
   name: 'praktijk',
+  head: {
+    title: 'Veilig Zwanger Ambacht - Verloskundige',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Leer ons kennen, op deze pagina lees je over onze praktijk en onze verloskundigen.' }
+      ],
+    },
   components: {
     Page,
     Modal,
@@ -136,6 +142,7 @@ export default {
     background: white;
     margin-top: 30px;
     margin-bottom: 30px;
+    text-align: left;
 
     img {
       width: 100%;
@@ -143,6 +150,7 @@ export default {
   }
 
   .title {
+    font-family: 'Dancing Script', cursive;
     padding: 2% 46px;
   }
 </style>

@@ -8,7 +8,7 @@
                 <strong>MENU</strong>
                 <ul class="pa-0">
                     <li class=footertekst><router-link class=footertekststyle to="/">Home</router-link></li>
-                    <li class=footertekst><router-link class=footertekststyle to="/praktijk">Praktijk</router-link></li>
+                    <li class=footertekst><router-link class=footertekststyle to="/verloskundige">Verloskundige</router-link></li>
                     <li class=footertekst><router-link class=footertekststyle to="/zwanger">Zwanger</router-link></li>
                     <li class=footertekst><router-link class=footertekststyle to="/bevalling">Bevalling</router-link></li>
                     <li class=footertekst><router-link class=footertekststyle to="/kraamtijd">Kraamtijd</router-link></li>
@@ -132,7 +132,7 @@
             <div slot="body">
                     <br><br>
                     <strong>Klachtenregeling</strong>
-                    <p class="footerp">Het is belangrijk dat jij je goed voelt met onze begeleiding. Vertrouwen in ons en je zwangerschap zijn belangrijke elementen voor het goed verlopen van je bevalling ,de start van jullie kindje en het ouderschap.</p>
+                    <p class="footerp">Het is belangrijk dat jij je goed voelt met onze begeleiding. Vertrouwen in ons en je zwangerschap zijn belangrijke elementen voor het goed verlopen van je bevalling, de start van jullie kind en het ouderschap.</p>
                     <p class="footerp">Daarom doen we er alles aan om jou, jouw zwangerschap, je partner en je kindje zo goed mogelijk te begeleiden.</p>
                     <p class="footerp">Heb je toch een klacht of ben je niet tevreden over onze zorg?</p>
                     <p class="footerp">Bespreek het met ons, als er sprake is van een misverstand dan kunnen we dit bespreken met elkaar en samen tot een oplossing komen of, als het nodig is, de zorg voor jouw zwangerschap nog beter aanpassen aan jouw wensen. Wij geven niet voor niets namelijk zorg op maat! Twijfel niet om het bespreekbaar te maken, wij staan ervoor open om onze zorg aan te passen/ te verbeteren.</p>

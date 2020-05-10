@@ -2,6 +2,7 @@ export default {
     kraamweek: {
         img: require(`~/assets/images/fotos/modalkraamweek.jpg`),
         title: "Kraamweek",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Zo’n kleine baby zet je hele wereld op z’n kop. Om je bij te staan in de eerste weken, komen we een aantal keren bij je thuis. Vooral in het begin komen we regelmatig langs om te kijken hoe het met je gaat. We controleren je herstel en kijken of je baby in goede conditie is. Je krijgt ook informatie van ons over wat je in deze periode kunt verwachten en indien nodig helpen we je bij de borstvoeding."
@@ -19,6 +20,7 @@ export default {
     nacontrole: {
         img: require(`~/assets/images/fotos/modalnacontrole.jpg`),
         title: "Nacontrole",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Ongeveer zes weken na de bevalling zien we je graag nog eens terug op de praktijk. Tijdens deze afspraak controleren we de gezondheid van jou en van je baby. We meten bijvoorbeeld je bloeddruk, indien nodig je ijzergehalte en bekijken het herstel van je bekkenboden. We bespreken je vruchtbaarheid en indien gewenst geven we informatie over anticonceptie en schrijven we dit voor. Daarnaast nemen we ruim de tijd om de afgelopen periode te bespreken en je vragen te beantwoorden."
@@ -31,6 +33,7 @@ export default {
     geboorteaangifte: {
         img: require(`~/assets/images/fotos/modalgeboorteaangifte.jpg`),
         title: "Geboorteaangifte",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Als je baby geboren is ben je verplicht om dit aan te geven bij de gemeente. Geboorteaangifte doe je binnen 3 werkdagen na de geboorte van je baby in de gemeente waar hij of zij geboren is. Dit kan dus een andere gemeente zijn dan waar je woont. De geboortedag zelf telt niet mee voor de aangiftetermijn."
@@ -39,19 +42,20 @@ export default {
             content: "Niet iedereen kan geboorteaangifte doen. De vader of de moeder is de aangewezen persoon om de baby in te schrijven bij de gemeente. Als de vader verhinderd is of er is geen vader betrokken bij de geboorte, dan mag ieder die bij de geboorte aanwezig is geweest de baby laten inschrijven bij de gemeente."
         }, {
             title: "",
-            content: "Je hoeft de baby zelf niet mee te nemen voor de aangifte. Degene die de geboorteaangifte gaat doen moet wel zijn eigen paspoort of ID-bewijs meenemen en ook die van de moeder. Indien nodig moet je ook de akte van erkenning en de akte van naamkeuze meenemen. Voor alle zekerheid geven wij je ook een geboortebewijs mee. Dit is een document waarin wij verklaren wanneer en in welke gemeente je baby geboren is. Daarnaast kan je ook je trouwboekje meenemen zodat je kind wordt bijgeschreven in het trouwboek. Dit laatste is niet verplicht."
+            content: "Je hoeft de baby zelf niet mee te nemen voor de aangifte. Degene die de geboorteaangifte gaat doen moet wel zijn eigen paspoort of ID-bewijs meenemen en ook die van de moeder. Indien nodig moet je ook de akte van erkenning en de akte van naamkeuze meenemen. Na de bevalling krijg je van ons een geboortebewijs. Dit is een document waarin wij verklaren wanneer en in welke gemeente je baby geboren is. Daarnaast kan je ook je trouwboekje meenemen zodat je kind wordt bijgeschreven in het trouwboek. Dit laatste is niet verplicht."
         }, {
             title: "",
             content: "Als je de baby hebt aangegeven maakt de ambtenaar van de gemeente een geboorteakte op. Deze akte wordt opgenomen in de registers van de burgerlijke stand. Dit is het juridische bewijs dat je kind geboren is. Na de aangifte krijgt je kind direct een Burgerservicenummer (BSN). Ook wordt hij ingeschreven in de Gemeente Basisadministratie persoonsgegevens (GBA)."
         }, {
             title: "",
-            content: "Op de website van <a href='https://www.h-i-ambacht.nl/Inwoners_Ondernemers/Alle_onderwerpen/Levensgebeurtenis/Geboorteaangifte' target='_blank'>Gemeente Hendrik Ido Ambacht</a> vind je meer informatie over de geboorteaangifte."
+            content: "Op de website van <a href='https://www.h-i-ambacht.nl/Inwoners_Ondernemers/Alle_onderwerpen/Levensgebeurtenis/Geboorteaangifte' target='_blank' rel='noreferrer'>Gemeente Hendrik Ido Ambacht</a> vind je meer informatie over de geboorteaangifte. Je kan ook digitaal geboorteaangifte doen."
         },
     ]
     },
     borstvoeding: {
         img: require(`~/assets/images/fotos/modalborstvoeding.jpg`),
         title: "Borstvoeding",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Moedermelk is de meest geschikte melk voor baby’s. Het bevat stoffen die beschermen tegen infecties en ziektes en het is volledig afgestemd op de behoefte van je kind. Dat borstvoeding de beste voeding is voor baby’s, daar is iedereen het over eens. Dit komt door de vele voordelen die borstvoeding met zich meebrengt. Het geven van borstvoeding is niet alleen gezond voor je baby, maar het heeft ook gezondheidsvoordelen voor jou. Het helpt met je herstel na de bevalling en je hebt minder kans op het krijgen van bepaalde ziektes. Het advies is om minimaal 6 maanden borstvoeding te geven. Of je borstvoeding geeft en hoe lang, bepaal je zelf. Elke druppel moedermelk die een kind krijgt telt mee."
@@ -70,6 +74,7 @@ export default {
     kunstvoeding: {
         img: require(`~/assets/images/fotos/modalpoedermelk.jpg`),
         title: "Kunstvoeding",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Sommige moeders kiezen ervoor om geen borstvoeding te geven. Er zijn verschillende, meestal goede, redenen waarom moeders hiervoor kiezen. Sommige moeders mogen of kunnen dit niet, bijvoorbeeld door bepaald soort medicatie die ze gebruiken, of het is iets wat totaal niet bij ze past. Een alternatief voor moedermelk is poedermelk (ook wel kunstvoeding of flesvoeding genoemd). Het wordt gemaakt van dierlijke of plantaardige stoffen en is geschikt om in plaats van moedermelk aan je pasgeboren baby te geven. In poedermelk zitten alle benodigde voedingsstoffen voor een kind om te groeien, maar het bevat helaas geen stoffen die extra gezondheidsvoordelen met zich meebrengen zoals bij borstvoeding wel het geval is."
@@ -85,6 +90,7 @@ export default {
     vruchtbaarheid: {
         img: require(`~/assets/images/fotos/modalvruchtbaarheid.jpg`),
         title: "Vruchtbaarheid",
+        alt: "",
         firstParagraphs: [{
             title: "", 
             content: "Als je bent bevallen zal je bloedverlies langzaam gaan stoppen en komt je normale cyclus weer op gang. Het is normaal om ongeveer zes weken lang bloedverlies van de bevalling te hebben, bij sommige vrouwen stopt het eerder. Wanneer je cyclus precies weer opgang komt verschilt van vrouw tot vrouw. Sommige vrouwen krijgen hun eerste menstruatie zes weken na de bevalling en bij andere vrouwen blijft het maanden weg. Door het geven van borstvoeding wordt je cyclus ook beïnvloed. De hormonen die vrijkomen tijdens de borstvoeding remmen je cyclus af en zorgen er vaak voor dat deze wordt uitgesteld. Wanneer je weer vruchtbaar bent is om deze redenen lastig in te schatten. Daarbij komt dat je vaak al vruchtbaar bent voordat je je eerste menstruatie krijgt."

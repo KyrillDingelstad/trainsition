@@ -3,13 +3,14 @@
     <div class="centreer">
       <div id="landingimgdiv">
         <img src="~/assets/images/fotos/landing.jpg" class="landingimg" alt="praktijk voorpagina achtergrond" />
+        <v-icon color="#ffffff" x-large class="scrollicon">mdi-chevron-down-circle</v-icon>
         <img src="~/assets/images/logo.svg" class="landinglogo" alt="verloskundige praktijk logo" />
       </div>      
 
       <div id="introwrap">
         <div class="introdiv">
           <div class="introtekst">
-            <h1>Verloskundige<br>in Hendrik Ido Ambacht</h1><br>
+            <h1>Verloskundige<br>ook in Zwijndrecht</h1><br>
             <p>Ben je zwanger of wil je graag zwanger worden? Een zwangerschap is een bijzondere periode en de geboorte van je kind een intense gebeurtenis. Je hebt ernaar uitgekeken, lang of kort, of misschien kwam je zwangerschap juist heel onverwacht. Is het je eerste, je tweede of je derde…?</p>
             <p>Samen hebben we de afgelopen jaren meer dan 3000 kinderen geboren helpen worden. Toch is elke zwangerschap uniek en heeft elke moeder haar eigen verhaal. Maar altijd heb je in deze periode deskundige begeleiding nodig. Die begeleiding willen wij je graag geven.</p>
             <h3>Woon je in Hendrik Ido Ambacht, Zwijndrecht of omgeving en ben je op zoek naar een verloskundige? Bel of mail ons dan.</h3><br>
@@ -114,11 +115,11 @@
 
       <div class="profieldiv">
         <div class="profielding">
-          <router-link to="/verloskundige"><img class="profieldingfoto" aria-label="Link naar verloskundige profielen pagina" src="~/assets/images/portretsandra.png" alt="verloskundige Sandra profielfoto" v-lazy-load/></router-link>
+          <router-link to="/verloskundige"><img class="profieldingfoto" aria-label="Link naar verloskundige profielen pagina" src="~/assets/images/portretsandra2.png" alt="verloskundige Sandra profielfoto" v-lazy-load/></router-link>
           <p class="profieltekst">Sandra</p>
         </div>
         <div class="profielding">
-          <router-link to="/verloskundige"><img class="profieldingfoto" aria-label="Link naar verloskundige profielen pagina" src="~/assets/images/portretineke.png" alt="verloskundige Ineke profielfoto" v-lazy-load/></router-link>
+          <router-link to="/verloskundige"><img class="profieldingfoto" aria-label="Link naar verloskundige profielen pagina" src="~/assets/images/portretineke2.png" alt="verloskundige Ineke profielfoto" v-lazy-load/></router-link>
           <p class="profieltekst">Ineke</p>
         </div>
       </div>
@@ -249,7 +250,7 @@ html {
 
 .scrollicon {
   z-index: 4;
-  bottom: 25%;
+  bottom: 5%;
   position: absolute;
 }
 

@@ -1,16 +1,16 @@
 <template>
   <page class="zwanger">
      
-     <img src="~/assets/images/fotos/babyschoenen3.jpg" class=pagestarter>
+     <img src="~/assets/images/fotos/babyschoenen3.jpg" class=pagestarter alt="zwanger pagina header" />
     
     <div class=pagetitle>
     <h1>ZWANGER</h1>
      </div>
 
     <p class=standaardp>
-      Of het nu je eerste keer is of je bent al een aantal keer zwanger geweest, het blijft een bijzondere ervaring om zwanger te zijn. In deze periode zal je merken dat je lichaam verandert, zowel fysiek als emotioneel. Wij als verloskundigen begeleiden we je tijdens de zwangerschap, de bevalling en als de baby geboren is komen we regelmatig bij je thuis langs. In de zwangerschap houden we de gezondheid van jou en je kind in de gaten en geven advies en informatie over jouw zwangerschap. </p>
+      Of het nu je eerste keer is of je bent al een aantal keer zwanger geweest, het blijft een bijzondere ervaring om zwanger te zijn. In deze periode zal je merken dat je lichaam verandert, zowel fysiek als emotioneel. Wij als verloskundigen begeleiden je tijdens de zwangerschap, de bevalling en als de baby geboren is komen we regelmatig bij je thuis langs. In de zwangerschap houden we de gezondheid van jou en je kind in de gaten en geven advies en informatie over jouw zwangerschap. </p>
     <p class=standaardp>
-      Als je weet dat je zwanger bent kun je je rechtstreeks bij ons aanmelden, dat kan via de telefoon of via de mail. Hiervoor heb je geen verwijzing van de huisarts nodig. </p>
+      Als je weet dat je zwanger bent, kun je je rechtstreeks bij ons aanmelden. Dat kan via de telefoon of via de mail. Hiervoor heb je geen verwijzing van de huisarts nodig. </p>
     <p class=standaardp>
         </p>
 
@@ -19,7 +19,7 @@
       <v-row justify="center">
         <v-col  v-for="(modal, key) in modals" :key="modal.id" cols="12" xs="12" sm="12" md="6" lg="4" xl="4">
           <v-card class=tegeltje @click="openModal(key)">
-            <img :src="modal.img" />
+            <img :src="modal.img" :alt="modal.alt" />
             <v-card-title primary h1> <vue-markdown> {{modal.title}} </vue-markdown> </v-card-title>
           </v-card>
         </v-col>
@@ -27,7 +27,7 @@
     </v-container>
 
     <modal v-show="modal" @close="closeModal" v-if="this.modal">
-        <div slot="body">
+        <div slot="body" style="text-align:left;">
             <img class=modalimg :src="this.modal.img">
             <v-card-title primary class="modaltitle">{{this.modal.title}}</v-card-title>
             <p v-for="(p, i) in this.modal.firstParagraphs" :key="i" class="fucking-p">
@@ -35,7 +35,7 @@
               <vue-markdown> {{p.content}} </vue-markdown>
             </p>
 
-            <span class="fucking-p-title" v-if="this.modal.firstExpansionPanels && this.modal.firstExpansionPanels.title">{{this.modal.firstExpansionPanels.title}}</span>
+            <span class="fucking-p-title" style="padding: 0 5%;" v-if="this.modal.firstExpansionPanels && this.modal.firstExpansionPanels.title">{{this.modal.firstExpansionPanels.title}}</span>
 
             <v-expansion-panels class=expand v-if="this.modal.firstExpansionPanels">
               <v-expansion-panel v-for="(p, i) in this.modal.firstExpansionPanels.panels" :key="i">
@@ -53,8 +53,8 @@
               <span class="fucking-p-title">{{p.title}}</span>
               <vue-markdown> {{p.content}} </vue-markdown>
             </p>
-
-            <span class="fucking-p-title" v-if="this.modal.secondExpansionPanels && this.modal.secondExpansionPanels.title">{{this.modal.secondExpansionPanels.title}}</span>
+            
+            <span class="fucking-p-title" style="padding: 0 5%;" v-if="this.modal.secondExpansionPanels && this.modal.secondExpansionPanels.title">{{this.modal.secondExpansionPanels.title}}</span>
 
              <v-expansion-panels class=expand v-if="this.modal.secondExpansionPanels">
                 <v-expansion-panel v-for="(p, i) in this.modal.secondExpansionPanels.panels" :key="i">
@@ -89,6 +89,12 @@ import PageFooter from '@/components/Footer.vue'
 
 export default {
   name: 'zwanger',
+  head: {
+    title: 'Veilig Zwanger Ambacht - Zwanger',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Lees hier alles over wat er bij komt kijken en wat je al kan regelen als je zwager bent.' }
+        ],
+    },
   components: {
     Page,
     Modal,
@@ -101,6 +107,11 @@ export default {
       modals: modals
     };
     
+  },
+  mounted() {
+      if(this.$route.query.modal) {
+          this.openModal(this.$route.query.modal)
+      }
   },
   methods: {
     openModal(modal) {
@@ -169,7 +180,7 @@ export default {
     font-size: 3em;
     text-align: left;
     padding: 0 5% ;
-    margin-bottom: 15px;
+    margin-bottom: 24px;
   }
 
   @media only screen and (max-width: 780px) {

@@ -1,7 +1,7 @@
 <template>
   <page class="bevalling">
 
-    <img src="~/assets/images/fotos/babyenmoeder2.jpg" class="pagestarter bevallingtop">
+    <img src="~/assets/images/fotos/babyenmoeder2.jpg" class="pagestarter bevallingtop" alt="bevalling pagina header" />
    
     <div class=pagetitle>
     <h1>BEVALLING</h1>
@@ -18,7 +18,7 @@
       <v-row justify="center">
         <v-col  v-for="(modal, key) in modals" :key="modal.id" cols="12" xs="12" sm="12" md="6" lg="4" xl="4">
           <v-card class=tegeltje @click="openModal(key)">
-            <img :src="modal.img" />
+            <img :src="modal.img" :alt="modal.alt" />
             <v-card-title primary h1> <vue-markdown> {{modal.title}} </vue-markdown> </v-card-title>
           </v-card>
         </v-col>
@@ -82,6 +82,12 @@ import PageFooter from '@/components/Footer.vue'
 
 export default {
   name: 'bevalling',
+  head: {
+    title: 'Veilig Zwanger Ambacht - Bevalling',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Lees hier voor informatie over het bevallen, wat vind je hier prettig in en wat je kunt voorbereiden.' }
+      ],
+    },
   components: {
     Page,
     Modal,
