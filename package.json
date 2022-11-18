@@ -22,7 +22,7 @@
     "material-design-icons-iconfont": "^5.0.1",
     "nodemailer": "^6.4.2",
     "nodemailer-express-handlebars": "^3.1.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "nuxt-lazy-load": "^1.2.2",
     "vue-markdown": "^2.2.4",
     "vuebar": "0.0.20",
